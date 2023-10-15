@@ -1,5 +1,32 @@
-header {
-    background: url(../img/bg-header.jpeg) no-repeat center;
-    background-size: cover;
-    min-height: 100vh;
-  }
+/*Tamaños imagenes*/
+
+
+.imagen{
+    height: 725px;
+}
+
+@media (max-width: 480px){
+
+    .imagen{
+        height: 500px;
+    }
+}
+
+
+/* Barra de Navegación*/
+
+.colorNav{
+    background-color: rgba(0, 0, 0, 0.693);
+}
+
+
+.barraDegrade{
+    background: linear-gradient(black,#212529);
+}
+
+
+.barraFooter{
+    background-color: black;
+   padding: 5px;
+   margin-top: 100px;
+}
