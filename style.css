@@ -42,3 +42,36 @@
         margin-left: 0%;
     }
 }
+
+/* Catalogo*/
+.centrarCatalogoh2{
+    margin-top: 5%;
+}
+
+@media (max-width: 768px){
+
+    .centrarCatalogoh2{
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 480px){
+
+    .centrarCatalogoh2{
+        margin-top: 20%;
+    }
+}
+
+
+.catalogoMedida{
+    width: 800px;
+}
+
+
+
+@media (max-width: 480px){
+
+    .catalogoMedida{
+       width: 200px;
+    }
+}
