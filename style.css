@@ -24,6 +24,11 @@
     background: linear-gradient(black,#212529);
 }
 
+.barraDegradeInversa{
+    background: linear-gradient(#212529,black);
+}
+
+
 
 .barraFooter{
     background-color: black;
