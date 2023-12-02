@@ -11,7 +11,7 @@
 
 <body class="bg-dark">
 
-    <nav class="navbar navbar-expand-lg navbar-dark colorNav justify-content-center fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark colorNav justify-content-center relative-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
             <img src="imagenes/sinTexto.png" alt="logo" width="40" height="30" class="d-inline-block align-text-top ms-lg-5 jus">
@@ -23,7 +23,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-center align-items-sm-center align-items-sm-start marginUl" >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="catalogo.html">Catalogo</a>
@@ -68,10 +68,50 @@
         </div>
       </nav>
     
-    
-  
-</body>
+      <main class="d-lg-flex d-md-grid m-auto mt-md-4 mt-1 justify-content-center" style="margin: 10%;">
 
-<script src="script.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+        <div class="card mx-5 my-3" style="width: 18rem;">
+          <img src="imagenes/card2.jpg" class="card-img-top" alt="..." style="height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title">Lisas</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">Ver más..</a>
+          </div>
+        </div>
+      
+        <div class="card mx-5 my-5  my-md-3" style="width: 18rem;">
+          <img src="imagenes/card1.jpg" class="card-img-top img-fluid " alt="..." style="height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title">Mosaicos</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="mosaicos.html" class="btn btn-dark">Ver más..</a>
+          </div>
+        </div>
+      
+      
+        <div class="card mx-5 my-3" style="width: 18rem;">
+          <img src="imagenes/card3.jpg" class="card-img-top" alt="..." style="height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title">Vereda</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">Ver más..</a>
+          </div>
+        </div>
+      </main>
+      <footer class="barraFooter text-white d-md-flex align-items-md-center justify-content-md-center text-center">
+
+        <img class="mt-3 mt-md-0" src="imagenes/ubicacion.png" width="20px">
+       <p class=" mt-md-3 mx-md-2 ">Camino Carrasco 4912</p>
+     
+     
+       <img src="imagenes/horario.png" class="ms-md-3" width="20px">
+       <p class="mt-md-3 mx-md-2">Lunes a Viernes 8:00 - 16:30</p>
+     
+       <img src="imagenes/CAMION.png" class="ms-md-3" width="35px">
+       <p class=" mt-md-3 mx-md-2">Envios dentro de Montevideo</p>
+     
+      </footer>
+</body>
+      <script src="index.js"></script>
+      <script src="js/bootstrap.min.js"></script>
 </html>
