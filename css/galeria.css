@@ -74,8 +74,15 @@
 .imgShow{
     height:80%;
     display: block;
+    transform: scale(0);
     object-fit: cover;
+    transition: transform .2s .4s;
 }
+
+.imgTransition{
+    transform: scale(1);
+}
+
 
 .copy{
     position: fixed;

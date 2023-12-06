@@ -28,9 +28,11 @@ function redirigirABanos() {
 
   const containerImage = document.querySelector(".containerImg");
 
-  const imgClickeada = document.querySelectorAll('.imgShow');
+  const imgClickeada = document.querySelector('.imgShow');
 
   const copy = document.querySelector('.copy');
+
+  const cerrarModal = document.querySelector('.bx.bx-x');
 
   imagenes.forEach(imagen => {
     imagen.addEventListener("click", ()=>{
@@ -41,12 +43,14 @@ function redirigirABanos() {
 
   const agregarImagen = (srcImagen, altImagen)=>{
     containerImage.classList.toggle('moveContainer');
+    imgClickeada.classList.toggle('imgTransition');
     containerImage.src = srcImagen;
     copy.innerHTML = altImagen;
   };
 
-  containerImage.addEventListener('click', ()=>{
+  cerrarModal.addEventListener('click', ()=>{
     containerImage.classList.toggle('moveContainer');
-  })
+    imgClickeada.classList.toggle('imgTransition');
+  });
 
   // Fin interacción de galería.
