@@ -1,6 +1,6 @@
 /*
     document.addEventListener("DOMContentLoaded", function() {
-
+ LINEA DE PRUEBA
         let elementos = [
             { imagen: "imagenes/card1.jpg", titulo: "Flores" },
             { imagen: "imagenes/card2.jpg", titulo: "Portada" },
