@@ -98,3 +98,18 @@
     font-size: 40px;
     cursor: pointer;
 }
+
+@media screen and (max-width:700px){
+    .imgShow{
+        width: 70%;
+    }
+
+    .copy{
+        bottom: 20px;
+    }
+
+    .bx.bx-x{
+        right: 10px;
+        font-size: 35px;
+    }
+}
