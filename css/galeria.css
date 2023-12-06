@@ -28,7 +28,7 @@
 }
 
 .img:hover{
-    filter: grayscale(50%);
+    filter: grayscale(100%);
     cursor: pointer;
     transition: filter .5s;
 }
