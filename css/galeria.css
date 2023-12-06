@@ -4,3 +4,112 @@
     box-sizing: border-box;
 }
 
+
+.containerGrid{
+    display:grid;
+    height: 100vh;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "img1 img2 img3 img3 img3"
+    "img1 img2 img3 img3 img3"
+    "img4 img4 img3 img3 img3"
+    "img4 img4 img3 img3 img3"
+    "img4 img4 img5 img5 img5"
+    "img4 img4 img5 img5 img5"
+    ;
+    gap: 5px;
+}
+
+.img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img:hover{
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: filter .5s;
+}
+
+.img1{
+    grid-area: img1;
+}
+
+.img2{
+    grid-area: img2;
+}
+
+.img3{
+    grid-area: img3;
+}
+
+.img4{
+    grid-area: img4;
+}
+
+.img5{
+    grid-area: img5;
+}
+
+.containerImg{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform:translateX(-100%);
+    background: rgba(0, 0, 0, 0.349);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s ease-in;
+}
+
+.moveContainer{
+    transform: translateX(0);
+}
+
+.imgShow{
+    height:80%;
+    display: block;
+    transform: scale(0);
+    object-fit: cover;
+    transition: transform .2s .4s;
+}
+
+.imgTransition{
+    transform: scale(1);
+}
+
+
+.copy{
+    position: fixed;
+    color:#fff;
+    bottom: 40px;
+}
+
+.bx.bx-x{
+    position: absolute;
+    color: #fff;
+    top: 66px;
+    right: 250px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:700px){
+    .imgShow{
+        width: 70%;
+    }
+
+    .copy{
+        bottom: 20px;
+    }
+
+    .bx.bx-x{
+        right: 10px;
+        font-size: 35px;
+    }
+}
