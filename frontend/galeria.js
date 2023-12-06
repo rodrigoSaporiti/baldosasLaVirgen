@@ -44,7 +44,7 @@ function redirigirABanos() {
   const agregarImagen = (srcImagen, altImagen)=>{
     containerImage.classList.toggle('moveContainer');
     imgClickeada.classList.toggle('imgTransition');
-    containerImage.src = srcImagen;
+    imgClickeada.src = srcImagen;
     copy.innerHTML = altImagen;
   };
 
