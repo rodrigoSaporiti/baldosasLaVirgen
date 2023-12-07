@@ -42,7 +42,6 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
 .barraFooter{
     background-color: black;
    padding: 5px;
-   margin-top: 100px;
 }
 
 
@@ -141,4 +140,17 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
     max-width: none; 
   }
 
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-top: auto; /* Empuja el footer hacia la parte inferior */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
   
