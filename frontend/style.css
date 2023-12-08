@@ -135,10 +135,19 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
   .carousel-inner img {
     object-fit: cover;
   }
-  #carouselExampleCaptions {
-    width: 100%;
-    height: 100%;
-    max-width: none; 
-  }
 
-  
+  @media (min) {
+    
+  }
+ 
+
+  @media (min-width: 1140px){
+
+    #carouselExampleCaptions {
+        width: 50%;
+        height: 50%;
+        max-width: none; 
+        margin-left: 50%;
+      }
+}
+
