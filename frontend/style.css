@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
 /*body blanco*/
 .bodyBlanco{
     margin: 0;
@@ -9,9 +11,17 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
 /*Tamaños imagenes*/
 
 
+
 .imagen{
     height: 725px;
 }
+
+.contenedorNav{
+  display: flex;
+  
+}
+
+
 
 @media (max-width: 480px){
 
@@ -20,7 +30,13 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
     }
 }
 
+body{
+  font-family: 'Lato', sans-serif;
+}
 
+.baldosaslv{
+  font-family:Arial, Helvetica, sans-serif;
+}
 
 /* Barra de Navegación*/
 
@@ -47,7 +63,7 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
 
 
 .marginUl{
-    margin-left: 25%;
+    margin-left: 48%;
 }
 
 @media (max-width: 768px){
@@ -90,6 +106,10 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
     }
 }
 
+.enlaceBtn {
+  color: #000; /* o el color que desees */
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
 
 /*Hover de Galeria */
 .tablaCard {
@@ -130,15 +150,242 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
     width: 100%;
     height: 100vh; 
     overflow: hidden; 
+    
   }
 
   .carousel-inner img {
     object-fit: cover;
-  }
-  #carouselExampleCaptions {
-    width: 100%;
-    height: 100%;
-    max-width: none; 
+    border-radius: 0 0 20px 20px;
   }
 
+  @media (min-width: 1140px){
+    #carouselExampleCaptions {
+        width: 70%;
+        height: 70%;
+        max-width: none; 
+        margin-left: 30%;
+      }
+      
+      #carouselContainer {
+        width: 100%;
+        height: 100vh; 
+        overflow: hidden; 
+      }
+ 
+    }
+
+  .colorIndex{
+    color:#e1dfdf;
+  }
+   .botonIngresar{
+    background-color: rgb(246, 225, 241);
+   }
+
+
+
+
+
+
+   /* Card de index con boton y hover */
+
+   .text-container:hover {
+    background-color: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(2px);
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+
+.text-container:hover span.belleza,
+.text-container:hover span.galeria {
+    color: rgb(136, 57, 90);;
+}
+
+  .text-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align:center;
+    max-width: 70%;
+    border: 1px solid pink;
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  }
+  .text-container span.belleza,
+  .text-container span.galeria {
+      transition: transform 0.3s; /* Transición para el efecto de agrandamiento */
+  }
+
+
+  .bg-container {
+    position: relative;
+    width: 30%;
+  }
+
+  .bg-container img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+  }
+
+  .btnIngresar {
+    
+    background-color: rgb(136, 57, 90);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .btnIngresar:hover {
+    background-color: rgb(233, 159, 192);
+    transform: scale(1.05);
+  }
+
+  .belleza{
+    color: rgb(245, 221, 232);
+  }
+
+
+
+
+  .text-container-responsive {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 50%;
+    max-height: 70%;
+    border: 1px solid pink;
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .text-container-responsive h1,
+  .text-container-responsive p,
+  .text-container-responsive button {
+    color: #fff;
+    margin: 0;
+  }
+
+  
+  .text-container-responsive button {
+    background-color: rgb(245, 221, 232);
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .text-container-responsive button:hover {
+    background-color: rgb(136, 57, 90);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .text-container-responsive {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        border: 1px solid pink;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+    
+  }
+
+  @media(min-width: 1140px){
+    .logo{
+        margin-left: 1% ;
+    }
+  }
+
+
+  .imagenFondo{
+    background-image: url("imagenes/piso2.jpg");
+    background-size: cover;
+    background-attachment: fixed
+  }
+
+  .card-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 18rem;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    border: none;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    transition: transform 0.5s ease-in-out;
+    display: block;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card:hover img {
+    transform: scale(1.2);
+  }
+  
+  .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    transform: translateY(0);
+    transition: background 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform-origin: bottom;
+    z-index: 1; /* Añadido para asegurar que el texto esté sobre la imagen */
+  }
+  
+  .card:hover .card-body {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(0);
+  }
+  
+  .card-title,
+  .card-text {
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  @media (min-width: 1140px){
+    .inputFooter{
+      width: 30%;
+      border-radius: 20px;
+      padding: 5px;
+    }
+  }
   
