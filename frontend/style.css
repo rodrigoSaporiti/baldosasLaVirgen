@@ -141,4 +141,17 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
     max-width: none; 
   }
 
+
+
+  @media (min-width: 1140px){
+
+    .inputFooter{
+
+        width: 30%;
+        border-radius: 5px;
+
+
+    }
+}
+
   
