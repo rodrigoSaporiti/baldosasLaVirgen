@@ -56,9 +56,9 @@ body{
 
 
 .barraFooter{
-    background: linear-gradient(#32383e,black);
+    background: linear-gradient(#000000,black);
    padding: 5px;
-   margin-top: 200px;
+   margin-top: 280px;
 }
 
 
@@ -150,12 +150,12 @@ body{
     width: 100%;
     height: 100vh; 
     overflow: hidden; 
+   
     
   }
 
   .carousel-inner img {
     object-fit: cover;
-    border-radius: 0 0 20px 20px;
   }
 
   @media (min-width: 1140px){
@@ -229,7 +229,6 @@ body{
     height: 100%;
     position: relative;
     z-index: 0;
-    border-radius: 20px;
   }
 
   .btnIngresar {
@@ -330,7 +329,7 @@ body{
   
   .card {
     width: 18rem;
-    height: 100%;
+    height: 150%;
     overflow: hidden;
     position: relative;
     transition: transform 0.5s ease-in-out;
@@ -452,3 +451,43 @@ body{
      }    
 
 }
+
+
+/* Main*/
+
+.mainColor{
+    background-image: url(imagenes/fondomain.jpg);
+    background-size: cover;
+    height: 300px;
+    margin-top: 15px;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+  }
+  
+  .whatsapp-float i {
+    margin-top: 16px;
+
+  }
+  
+  @keyframes whatsapp-float {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
