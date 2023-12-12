@@ -35,7 +35,7 @@ body{
 }
 
 .baldosaslv{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
  
 }
 
@@ -57,7 +57,7 @@ body{
 
 
 .barraFooter{
-    background: linear-gradient(#000000,black);
+    background: linear-gradient(#000000,rgb(36, 36, 36));
    padding: 5px;
    margin-top: 280px;
 }
@@ -286,19 +286,20 @@ body{
   .imgBelleza{
     width: 100%; 
     object-fit: cover;
+    height: 250px;
   }
 
   .text-container-responsive {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
     width: 100%;
     height: 70%;
-    padding: 10px;
+    padding: 25px;
     border: 1px solid pink;
     border-radius: 20px;
     backdrop-filter: blur(8px);
@@ -376,6 +377,36 @@ body{
   .cardIndex:hover img {
     transform: scale(1.2);
   }
+
+
+  @media (max-width: 480px){
+
+    .cardIndex {
+      margin: 0;
+      padding: 0;
+      max-width: 80%;
+      width: 20%;
+      height: 80%;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease-in-out;
+      border: none;
+    }
+
+    .cardIndex img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      outline: none;
+      transition: transform 0.5s ease-in-out;
+      display: block;
+    }
+
+    
+   
+  }
+
   
   .card-body {
     position: absolute;
@@ -517,3 +548,6 @@ body{
   /*Card mosaico*/
 
  
+
+  .nuestrosProductos{
+    font-family:Georgia, 'Times New Roman', Times, serif  }
