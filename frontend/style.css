@@ -384,9 +384,8 @@ body{
     .cardIndex {
       margin: 0;
       padding: 0;
-      max-width: 80%;
-      width: 20%;
-      height: 80%;
+      max-width: 170px;
+      width: 34px;
       overflow: hidden;
       position: relative;
       transition: transform 0.5s ease-in-out;
@@ -394,17 +393,19 @@ body{
     }
 
     .cardIndex img {
-      width: 100%;
-      height: 100%;
+      width: 180px;
+      height: 230px;
       object-fit: cover;
       border: none;
       outline: none;
       transition: transform 0.5s ease-in-out;
-      display: block;
     }
-
+.mainColor{
+    background-image: url(imagenes/fondomain.jpg);
+    background-size: cover;
+    margin-top: 60px;
+}
     
-   
   }
 
   
