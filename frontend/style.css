@@ -35,7 +35,8 @@ body{
 }
 
 .baldosaslv{
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ 
 }
 
 /* Barra de Navegación*/
@@ -56,9 +57,9 @@ body{
 
 
 .barraFooter{
-    background: linear-gradient(#32383e,black);
+    background: linear-gradient(#000000,rgb(36, 36, 36));
    padding: 5px;
-   margin-top: 200px;
+   margin-top: 280px;
 }
 
 
@@ -150,12 +151,12 @@ body{
     width: 100%;
     height: 100vh; 
     overflow: hidden; 
+   
     
   }
 
   .carousel-inner img {
     object-fit: cover;
-    border-radius: 0 0 20px 20px;
   }
 
   @media (min-width: 1140px){
@@ -219,6 +220,8 @@ body{
   }
 
 
+
+
   .bg-container {
     position: relative;
     width: 30%;
@@ -229,7 +232,6 @@ body{
     height: 100%;
     position: relative;
     z-index: 0;
-    border-radius: 20px;
   }
 
   .btnIngresar {
@@ -256,20 +258,7 @@ body{
 
 
 
-  .text-container-responsive {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    max-width: 50%;
-    max-height: 70%;
-    border: 1px solid pink;
-    border-radius: 20px;
-    padding: 20px;
-    backdrop-filter: blur(8px);
-    transition: background-color 0.3s, transform 0.3s;
-  }
+
 
   .text-container-responsive h1,
   .text-container-responsive p,
@@ -294,19 +283,52 @@ body{
     transform: scale(1.05);
   }
 
-  @media (max-width: 768px) {
+  .imgBelleza{
+    width: 100%; 
+    object-fit: cover;
+    height: 250px;
+  }
+
+  .text-container-responsive {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 95%;
+    max-height: 100%;
+    width: 100%;
+    height: 70%;
+    padding: 25px;
+    border: 1px solid pink;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+
+  @media (max-width: 480px) {
     .text-container-responsive {
         position: absolute;
+        top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
-        max-width: 100%;
+        max-width: 95%;
+        max-height: 100%;
         width: 100%;
-        height: 100%;
+        height: 70%;
+        padding: 10px;
         border: 1px solid pink;
         border-radius: 20px;
         backdrop-filter: blur(8px);
         transition: background-color 0.3s, transform 0.3s;
       }
+
+      .imgBelleza{
+        height: 250px;
+      }
+
     
   }
 
@@ -328,16 +350,16 @@ body{
     gap: 20px;
   }
   
-  .card {
+  .cardIndex {
     width: 18rem;
-    height: 100%;
+    height: 150%;
     overflow: hidden;
     position: relative;
     transition: transform 0.5s ease-in-out;
     border: none;
   }
   
-  .card img {
+  .cardIndex img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -347,14 +369,44 @@ body{
     display: block;
   }
   
-  .card:hover {
+  .cardIndex:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   }
   
-  .card:hover img {
+  .cardIndex:hover img {
     transform: scale(1.2);
   }
+
+
+  @media (max-width: 480px){
+
+    .cardIndex {
+      margin: 0;
+      padding: 0;
+      max-width: 80%;
+      width: 20%;
+      height: 80%;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease-in-out;
+      border: none;
+    }
+
+    .cardIndex img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      outline: none;
+      transition: transform 0.5s ease-in-out;
+      display: block;
+    }
+
+    
+   
+  }
+
   
   .card-body {
     position: absolute;
@@ -370,12 +422,12 @@ body{
     z-index: 1; /* Añadido para asegurar que el texto esté sobre la imagen */
   }
   
-  .card:hover .card-body {
+  .cardIndex:hover .card-body {
     background: rgba(0, 0, 0, 0.9);
     transform: translateY(0);
   }
   
-  .card-title,
+  .card-titleIndex,
   .card-text {
     margin-bottom: 10px;
     color: white;
@@ -452,3 +504,50 @@ body{
      }    
 
 }
+
+
+/* Main*/
+
+.mainColor{
+    background-image: url(imagenes/fondomain.jpg);
+    background-size: cover;
+    height: 300px;
+    margin-top: 60px;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+  }
+  
+  .whatsapp-float i {
+    margin-top: 16px;
+
+  }
+  
+  @keyframes whatsapp-float {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /*Card mosaico*/
+
+ 
+
+  .nuestrosProductos{
+    font-family:Georgia, 'Times New Roman', Times, serif  }

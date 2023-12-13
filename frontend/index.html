@@ -7,9 +7,15 @@
   <title>Baldosas LV</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
-<body class="bg-dark barraDegrade">
+<body class="bg-black">
+  
+  <a href="https://api.whatsapp.com/send?phone=59892212234" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <div id="miModal" class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
@@ -36,10 +42,10 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark colorNav fixed-top">
     <div class="container-fluid logo ">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand d-flex" href="index.html">
         <img src="imagenes/sinTexto.png" alt="logo" width="40" height="30"
           class=" align-text-top " />
-        <span class=" baldosaslv">Baldosas LV</span>
+        <span class=" baldosaslv mt-1">Baldosas LV</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -175,12 +181,12 @@
   </header>
 
   <!-- bara responsive -->
-  <section class="w-100 m-0">
+  <section class="w-100 p-0 m-0 bg-light">
 
-    <div class="container">
+    <div class="p-0 m-0">
 
-      <div class="d-sm-block d-lg-none position-relative w-100 p-0">
-        <img src="imagenes/piso2.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 20px;">
+      <div class="d-sm-block d-lg-none position-relative w-100 p-0 overflow-hidden">
+        <img src="imagenes/piso2.jpg" class="imgBelleza">
         <div class="text-container-responsive">
           <h1 class="colorIndex">Descubre la <span class="belleza">BELLEZA</span> a través de nuestra <span
               class="belleza">GALERIA</span></h1>
@@ -197,34 +203,40 @@
 
   </section>
 
-  <main id="mainContent" class="d-lg-flex d-md-grid m-auto mt-md-4 mt-1 justify-content-center">
-    <div class="card-container"></div>
-    <div class="card-container">
-      <div class="card mx-5 my-3 expand-on-hover" style="width: 18rem">
+
+  <h1 class="text-white display-6 text-center mt-4 mb-5 p-5 border-bottom border-3 nuestrosProductos">Nuestros Productos</h1>
+
+  <main id="mainContent" class="d-none mainColor d-lg-flex d-lg-grid justify-content-center ">
+   
+   
+  
+
+    <div class="card-container mt-4">
+      <div class="cardIndex mx-5 my-3 expand-on-hover" style="width: 18rem">
         <img src="imagenes/card2.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Lisas</h5>
+          <h5 class="card-titleIndex">Lisas</h5>
           <a href="lisas.html" class="btn btn-dark">Ver más..</a>
         </div>
       </div>
     </div>
 
-      <div class="card-container">
-        <div class="card mx-5 my-3 expand-on-hover" style="width: 18rem">
+      <div class="card-container mt-4">
+        <div class="cardIndex mx-5 my-3 expand-on-hover" style="width: 18rem">
           <img src="imagenes/card1.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Mosaicos</h5>
+            <h5 class="card-titleIndex">Mosaicos</h5>
             <a href="mosaicos.html" class="btn btn-dark">Ver más..</a>
           </div>
         </div>
       </div>
 
 
-        <div class="card-container">
-          <div class="card mx-5 my-3 expand-on-hover" style="width: 18rem">
+        <div class="card-container mt-4">
+          <div class="cardIndex mx-5 my-3 expand-on-hover" style="width: 18rem">
             <img src="imagenes/card3.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Vereda</h5>
+              <h5 class="card-titleIndex">Vereda</h5>
               <a href="vereda.html" class="btn btn-dark">Ver más..</a>
             </div>
           </div>
@@ -232,6 +244,52 @@
    
   </main>
 
+  <!-- main responsive -->
+
+  <main id="mainContent" class=" mainColor m-0 p-0  d-lg-none">
+   
+  <div class="row justify-content-center align-content-center">
+
+
+    <div class="col-6 m-0 p-0 ">
+    <div class="card-container mt-4">
+      <div class="cardIndex  expand-on-hover" style="width: 18rem">
+        <img src="imagenes/card2.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-titleIndex">Lisas</h5>
+          <a href="lisas.html" class="btn btn-dark">Ver más..</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6 m-0 p-0">
+      <div class="card-container mt-4">
+        <div class="cardIndex expand-on-hover" style="width: 18rem">
+          <img src="imagenes/card1.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-titleIndex">Mosaicos</h5>
+            <a href="mosaicos.html" class="btn btn-dark">Ver más..</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-6">
+        <div class="card-container mt-4">
+          <div class="cardIndex  expand-on-hover" style="width: 18rem">
+            <img src="imagenes/card3.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-titleIndex">Vereda</h5>
+              <a href="vereda.html" class="btn btn-dark">Ver más..</a>
+            </div>
+            </div>
+          </div>
+        </div>
+     
+      </div>
+  </main>
   
 
 
@@ -268,7 +326,7 @@
     />
  
    
-    <span class="d-flex justify-content-around align-content-center text-white  mb-0" style="font-size: small;">Baldosas LV</span>
+    <span class="baldosaslv d-flex justify-content-around align-content-center text-white  mb-0" style="font-size: small;">Baldosas LV</span>
   
   </a>
 
