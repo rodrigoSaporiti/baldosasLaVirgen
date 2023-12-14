@@ -467,8 +467,10 @@ body{
   @media (min-width: 1140px){
     .inputFooter{
       width: 30%;
-      border-radius: 20px;
-      padding: 5px;
+      height: 37px;
+      margin: 0;
+      padding: 0;
+      border: none;
     }
   }
   
@@ -480,8 +482,6 @@ body{
     .inputFooter{
 
         width: 30%;
-        border-radius: 4px;
-       padding: 5px;
        margin-right:0px ;
 
 
@@ -496,28 +496,44 @@ body{
 }
 
 .btnSus{
+   width: 125px;
     height: 37px;
-    margin-left: -10px;
-    background-color: #1b1b1b;
-}
+    background-color: #000000;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-left: -5px;
   
+}
 
 @media (max-width: 768px){
 
 
     .inputFooter{
+      width: 45%;
         padding: 1px;
         border-radius: none;
     }
     .btnSus{
-      
+        width: 100px;
         height: 30px;
         
     }
 }
 
 
-@media (max-width: 480px){
+@media (max-width: 767px){
+
+  .inputFooter{
+    width: 65%;
+  }
+  
+  .btnSus{
+    width: 100px;
+    height: 30px;
+    
+}
 
     .footerResponsive{
 
@@ -530,6 +546,7 @@ body{
      .celResponsive{
         margin-top: 15px;
      }    
+     
 
 }
 
