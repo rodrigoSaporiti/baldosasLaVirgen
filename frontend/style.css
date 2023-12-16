@@ -711,5 +711,9 @@ body{
 
   .imagenBaldosasInfo{
 
-    width: ;
+    width: 400px ;
   }
+  
+ .imagenGaleriaInfo{
+  width: 200px;
+ }
