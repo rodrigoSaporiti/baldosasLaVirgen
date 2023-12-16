@@ -456,6 +456,9 @@ body{
       outline: none;
       transition: transform 0.5s ease-in-out;
     }
+
+    
+   
   }
   
   
@@ -464,31 +467,22 @@ body{
 
   /* Footer */
 
-  @media (min-width: 1140px){
-    .inputFooter{
-      width: 30%;
-      height: 37px;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-  }
-  
-
-  
-
-  @media (min-width: 1140px){
-
-    .inputFooter{
-
-        width: 30%;
-       margin-right:0px ;
 
 
-    }
 
-    
+
+.inputFooter{
+
+  width: 30%;
+ margin-right:0px ;
+ height: 37px;
+ margin: 0;
+ padding: 0;
+ border: none;
+
+
 }
+
 
 .inputFooter:focus{
     outline: none;
@@ -498,8 +492,8 @@ body{
 .btnSus{
    width: 125px;
     height: 37px;
-    background-color: #000000;
-    color: white;
+    background-color: #5e5e5e;
+    color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
     border: none;
@@ -507,31 +501,19 @@ body{
   
 }
 
-@media (max-width: 768px){
 
 
-    .inputFooter{
-      width: 45%;
-        padding: 1px;
-        border-radius: none;
-    }
-    .btnSus{
-        width: 100px;
-        height: 30px;
-        
-    }
-}
-
-
+/* estilo footer hasta 767*/
 @media (max-width: 767px){
 
   .inputFooter{
-    width: 65%;
+    width: 80%;
   }
   
   .btnSus{
-    width: 100px;
+    width: 150px;
     height: 30px;
+    margin-top: 10px;
     
 }
 
@@ -723,4 +705,11 @@ body{
 
   .divIndex{
     padding: 9rem;
+  }
+
+
+
+  .imagenBaldosasInfo{
+
+    width: ;
   }
