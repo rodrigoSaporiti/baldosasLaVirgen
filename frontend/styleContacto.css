@@ -1,0 +1,295 @@
+/*body blanco*/
+.bodyBlanco{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(255,255,255);
+background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 7%);
+}
+/*Tamaños imagenes*/
+
+
+.imagen{
+    height: 725px;
+}
+
+@media (max-width: 480px){
+
+    .imagen{
+        height: 500px;
+    }
+}
+
+
+
+/* Barra de Navegación*/
+
+.colorNav{
+    background-color: rgba(0, 0, 0, 0.693);
+}
+
+
+.barraDegrade{
+    background: linear-gradient(black,#212529);
+}
+
+.barraDegradeInversa{
+    background: linear-gradient(#212529,black);
+}
+
+
+
+.barraFooter{
+    background-color: black;
+   padding: 5px;
+}
+
+
+.marginUl{
+    margin-left: 25%;
+}
+
+@media (max-width: 768px){
+
+    .marginUl{
+        margin-left: 0%;
+    }
+}
+
+/* Catalogo*/
+.centrarCatalogoh2{
+    margin-top: 5%;
+}
+
+@media (max-width: 768px){
+
+    .centrarCatalogoh2{
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 480px){
+
+    .centrarCatalogoh2{
+        margin-top: 20%;
+    }
+}
+
+
+.catalogoMedida{
+    width: 800px;
+}
+
+
+
+@media (max-width: 480px){
+
+    .catalogoMedida{
+       width: 200px;
+    }
+}
+
+
+/*Hover de Galeria */
+.tablaCard {
+    background-color: #212529; 
+    transition: box-shadow 0.3s ease, background-color 0.5s ease;
+    border: 2px solid #292929;
+    border-radius: 10px; 
+    overflow: hidden; 
+    position: relative; 
+    cursor: pointer;
+}
+
+.tablaCard:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #131212;
+    border: 2px solid rgb(110, 110, 110);
+    transform: scale(1.03);
+}
+
+.tablaCard::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.041), rgba(255, 255, 255, 0.001));
+    z-index: 1; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.tablaCard:hover::before {
+    opacity: 1; 
+}
+
+
+  #carouselContainer {
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+  }
+
+  .carousel-inner img {
+    object-fit: cover;
+  }
+  #carouselExampleCaptions {
+    width: 100%;
+    height: 100%;
+    max-width: none; 
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(190deg, rgba(255, 255, 255, 1) 0%, rgba(236, 236, 236, 1) 7%);
+    background-size: cover;
+    color: #333;
+  
+  }
+  
+  footer {
+    margin-top: auto; 
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+ 
+  
+ header {
+  background-color: #1b1e20; 
+  color: #fff;
+  text-align: center;
+  padding: 60px 0; 
+  margin-bottom: 20px; /
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto; 
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    
+  }
+
+  form {
+    display: grid;  
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8); /* Ajusta la opacidad según tus preferencias */
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      position: relative;
+  
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input,
+  textarea {
+      width: calc(100% - 20px);
+      padding: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+
+.buttonContacto:hover {
+  background-color: #555;
+}
+
+  .background-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+
+  .inputFooter {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 200px;
+}
+
+#hrefSus {
+  text-decoration: none; /* Esto elimina el subrayado */
+  color: tu-color-preferido; /* Puedes establecer un color personalizado para los enlaces */
+}
+
+#hrefSus:hover {
+  color: rgb(230, 217, 217);
+  text-decoration: underline; /* Agrega el subrayado cuando el enlace se coloca encima */
+  /* También puedes ajustar el color del subrayado al pasar el ratón si lo deseas */
+}
+
+
+.btnSus {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+ .btnSus:hover {
+            background-color: #eee;
+        }
+
+  .footerResponsive {
+    padding-top: 20px;
+  }
+
+  .celResponsive {
+    margin-bottom: 20px;
+  }
+
+  iframe {
+    border: none;
+  }
