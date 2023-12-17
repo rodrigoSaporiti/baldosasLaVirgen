@@ -711,6 +711,7 @@ body{
   
 /* Baldosas info*/
 
+
   .imagenBaldosasInfo{
 
     width: 400px ;
@@ -729,3 +730,6 @@ background-color: #000000;
 
 box-shadow: 0px 0px 9px 4px rgba(29, 28, 28, 0.85);
  }
+
+ 
+
