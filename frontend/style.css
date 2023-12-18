@@ -713,3 +713,65 @@ body{
 
     width: ;
   }
+
+  /*CATALOGO*/
+
+  .carousel{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Estilo opcional: redondea las esquinas del carousel */
+.carousel-inner {
+  border-radius: 8px;
+  overflow: hidden; /* Asegura que la sombra se aplique correctamente */
+}
+
+
+ .fondoMain {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+.backgroundMain {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/frontend/imagenes/fondomain.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* Para evitar que el contenido sobresalga del fondo */
+}
+
+.backgroundOverlay {
+  position: absolute;
+  content: "";
+  width: 38%;
+  height: 100%;
+  background-image: url('/frontend/imagenes/prueba1.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Asegura que el fondo de color esté por debajo del contenido */
+}
+
+.backgroundContent {
+  position: relative;
+  z-index: 2; /* Asegura que el contenido esté por encima del fondo de color */
+  text-align: center; 
+  color: rgb(32, 31, 31);
+  left: 20%;
+  padding: 20px; 
+}
+
+.backgroundText {
+  position: relative;
+  z-index: 2; 
+  text-align: center; 
+  color: rgb(134, 131, 131); 
+}
+
