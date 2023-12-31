@@ -1,0 +1,127 @@
+section{
+    height: 70vh;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+section img{
+    width: 250px;
+    margin:0 50px;
+}
+
+.inicio{
+
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+section h2{
+
+    font-weight: bolder;
+}
+
+section h1{
+    font-size: 70px;
+}
+
+
+section .info{
+    width: 600px;
+    margin: 0 50px;
+}
+
+
+.veredaInfo{
+    position: relative;
+    left: -50px;
+    opacity: 0;
+    height: 300px;
+    border-radius: 20px ;
+}
+
+.efecto-veredaInfo{
+    left: 0px;
+    opacity: 1;
+    transition: 1.5s linear;
+}
+
+.veredaPanes{
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.efecto-veredaPanes{
+    transform: scale(1);
+    opacity: 1;
+    transition: 1.5s linear;
+}
+
+
+.veredaBarras{
+    position: relative;
+    bottom: -80px;
+    opacity: 0;
+}
+
+
+.efecto-veredaBarras{
+    opacity: 1;
+    bottom: 0;
+    transition: 1.5s linear;
+}
+
+@media (max-width: 480px){
+
+section{
+    display: block;
+
+}
+
+.info{
+    max-width: 70%;
+    width: 100%;
+    text-align: center;
+}
+
+.veredaPanes{
+    margin-top: 100px;
+}
+
+.veredaBarras{
+    margin-top: 100px;
+}
+
+section img{
+    margin: 0 0px;
+    margin-bottom: 20px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+}
+
+.parrafoDeslizar{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out; 
+}
