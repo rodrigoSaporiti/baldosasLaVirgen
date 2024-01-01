@@ -1,0 +1,17 @@
+/* Cambiar el color del encabezado del accordion */
+.accordion-item {
+    background-color: #c7b9b9; /* Cambia el color de fondo */
+  }
+  
+  /* Cambiar el color del texto del encabezado del accordion */
+  .accordion-button {
+    color: #c5c4c4; /* Cambia el color del texto */
+    background-color: #181818;
+  }
+  
+  /* Cambiar el color del cuerpo del accordion */
+  .accordion-body {
+    background-color: #ffffff; /* Cambia el color de fondo */
+    color: #555; /* Cambia el color del texto */
+  }
+  
