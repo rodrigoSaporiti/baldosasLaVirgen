@@ -81,3 +81,7 @@ imagenes.forEach(imagen => {
     containerImage.classList.toggle('moveContainer');
     imgClickeada.classList.toggle('imgTransition');
   });
+
+
+
+ 
