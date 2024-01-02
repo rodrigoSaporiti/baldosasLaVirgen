@@ -1,0 +1,35 @@
+/* Cambiar el color del encabezado del accordion */
+.accordion-item {
+    background-color: #c7b9b9; /* Cambia el color de fondo */
+  }
+  
+  /* Cambiar el color del texto del encabezado del accordion */
+  .accordion-button {
+    color: #ffffff; /* Cambia el color del texto */
+    background-color: #171717;
+  }
+  
+  /* Cambiar el color del cuerpo del accordion */
+  .accordion-body {
+    background-color: #ffffff; /* Cambia el color de fondo */
+    color: #555; /* Cambia el color del texto */
+  }
+  
+  .accordion-button:not(.collapsed){
+    background-color:#171717 ;
+    color: white;
+  }
+
+  .accordion-button::after{
+background-color: rgb(119, 119, 119);
+border-radius: 2px;
+  
+  }
+
+
+
+  @media(max-width:480px){
+    main{
+      width: 75%;
+    }
+  }
