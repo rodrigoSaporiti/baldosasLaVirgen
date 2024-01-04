@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="crud.css" />
+ 
+ 
+
+</head>
+<body class="bg-dark text-white">
+
+
+
+
+
+<div class="row">
+
+
+
+
+
+
+
+
+<div class="col-2">
+<aside class="bg-light text-dark">
+
+  <a href="index-crud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Inicio</span></h3></a>
+  <a href="clientesCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Clientes</span></h3></a>
+  <a href="galeriaCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Galeria</span></h3></a>
+  <a href="lisasCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Lisas</span></h3></a>
+  <a href="mosaicosCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Mosaicos</span></h3></a>
+
+
+
+</aside>
+
+
+</div>
+
+
+
+<div class="col-10 ">
+
+    <div class="row text-dark">
+        <div class="col-6 d-flex justify-content-end"><h1 class="text-center text-white mt-4">Cocinas</h1></div>
+        <div class="col-6 m-0 m-auto d-flex justify-content-center">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+ Agregar Imagen</button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+  
+                          <input type="file" class="form-control" id="imagenCocina">
+                        </div>
+                     
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+  
+</div>
+
+
+  <div class="tablaScroll">
+
+  <table class="table container w-75 text-white">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th scope="row">1</th>
+        <td><img src="imagenes/bathrom1.jpg" width="100px" alt=""></td>
+        <td><button class="p-1 w-75 btn btn-danger">Eliminar</button></td>
+      </tr>
+      
+      <tr>
+        <th scope="row">2</th>
+        <td><img src="imagenes/bathrom2.jpg" width="100px" alt=""></td>
+        <td><button class="p-1 w-75 btn btn-danger">Eliminar</button></td>
+      </tr>
+   
+
+      <tr>
+        <th scope="row">2</th>
+        <td><img src="imagenes/bathrom2.jpg" width="100px" alt=""></td>
+        <td><button class="p-1 w-75 btn btn-danger">Eliminar</button></td>
+      </tr>
+  
+    </tbody>
+  </table>
+
+</div>
+
+  
+
+ 
+
+</div>
+
+
+
+    <script src="../js/bootstrap.min.js"></script>
+    
+</body>
+
+
+
+</html>
