@@ -59,7 +59,7 @@
             let tarjetaHTML = `
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
-                        <img src="imagenes/${elemento.img}.jpg" class="card-img-top" alt="" style="height: 150px;">
+                        <img src="imagenes/${elemento.img}" class="card-img-top" alt="" style="height: 150px;">
                         <h5 class="card-title text-center">${elemento.nombre}</h5>
                         <a href="baldosas-info.html" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
                     </div>
