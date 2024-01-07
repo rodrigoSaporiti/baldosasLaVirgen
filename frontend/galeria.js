@@ -24,7 +24,18 @@ function redirigirABanos() {
   }
 
 // Inicio de interacción para las fotos en la galería, se agrega transición cada vez que se clickea la imágen, se envían los atributos de source (ruta de la imágen) y alt que es el texto alternativo por si no se visualiza la foto.
-  const imagenes = document.querySelectorAll(".img");
+ 
+
+const idImagen = document.querySelectorAll('[id^="foto"]')
+
+console.log(idImagen);
+const imagenes = document.querySelectorAll(".img.id");
+
+
+
+
+  
+
 
   const containerImage = document.querySelector(".containerImg");
 
@@ -34,16 +45,26 @@ function redirigirABanos() {
 
   const cerrarModal = document.querySelector('.bx.bx-x');
 
-  imagenes.forEach(imagen => {
+  idImagen.forEach(imagen => {
     imagen.addEventListener("click", ()=>{
+      
+      localStorage.setItem("idImg", imagen.id);
+
       agregarImagen(imagen.getAttribute('src'), imagen.getAttribute('alt'));
     })
 
   })
 
-  const agregarImagen = (srcImagen, altImagen)=>{
+  const agregarImagen = (srcImagen, altImagen,)=>{
+
+  
     containerImage.classList.toggle('moveContainer');
     imgClickeada.classList.toggle('imgTransition');
+    imgClickeada.src = srcImagen;
+    copy.innerHTML = altImagen;
+  };
+
+  const agregarImagen2 = (srcImagen, altImagen, )=>{
     imgClickeada.src = srcImagen;
     copy.innerHTML = altImagen;
   };
@@ -52,5 +73,47 @@ function redirigirABanos() {
     containerImage.classList.toggle('moveContainer');
     imgClickeada.classList.toggle('imgTransition');
   });
+
+
+  const botonAtras = document.querySelector("#buttonAtras");
+  const botonAdelante = document.querySelector("#buttonAdelante");
+
+  botonAdelante.addEventListener("click", () => {
+    const fotoActualId = localStorage.getItem("idImg");
+    const imagenActual = document.getElementById(fotoActualId);
+    const siguienteImagen = imagenActual.nextElementSibling;
+  
+    if (siguienteImagen) {
+      const srcSiguienteImagen = siguienteImagen.getAttribute('src');
+      const altSiguienteImagen = siguienteImagen.getAttribute('alt');
+  
+      if(srcSiguienteImagen && altSiguienteImagen){
+  
+        localStorage.setItem("idImg", siguienteImagen.id);
+        agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
+      }
+    }
+  });
+
+botonAtras.addEventListener("click", () => {
+    const fotoActualId = localStorage.getItem("idImg");
+    const imagenActual = document.getElementById(fotoActualId);
+    const siguienteImagen = imagenActual.previousElementSibling;
+  
+    if (siguienteImagen) {
+      const srcSiguienteImagen = siguienteImagen.getAttribute('src');
+      const altSiguienteImagen = siguienteImagen.getAttribute('alt');
+
+      if(srcSiguienteImagen && altSiguienteImagen){
+  
+      localStorage.setItem("idImg", siguienteImagen.id);
+      agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
+    }
+
+  }
+  });
+  
+
+
 
   // Fin interacción de galería.
