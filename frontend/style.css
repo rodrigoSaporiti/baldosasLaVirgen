@@ -67,7 +67,7 @@ body{
     background: linear-gradient(#000000,rgb(36, 36, 36));
    padding: 5px;
    margin-top: auto;
-   
+   margin-top: 200px;
 }
 
 
@@ -740,24 +740,18 @@ body{
 
 .backgroundMain {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  height: 70vh;
   background-image: url('/frontend/imagenes/fondomain.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden; /* Para evitar que el contenido sobresalga del fondo */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
 }
 
-.backgroundOverlay {
-  position: absolute;
-  content: "";
-  width: 38%;
-  height: 100%;
-  background-image: url('/frontend/imagenes/prueba1.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 1; /* Asegura que el fondo de color esté por debajo del contenido */
-}
+
 
 .backgroundContent {
   position: relative;
