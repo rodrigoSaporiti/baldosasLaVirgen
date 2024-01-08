@@ -40,6 +40,52 @@ app.get("/", (req, res) => {
     }
   });
 
+  
+
+  // Get que trae los datos de la db con los correos
+  app.get("/correos", async (req, res) => {
+    let conn;
+    try {
+      conn = await pool.getConnection();
+      const rows = await conn.query(
+        "SELECT * FROM correos"
+      );
+  
+      res.json(rows);
+    } catch (error) {
+      res.status(500).json({ message: "Se rompió el servidor" });
+    } finally {
+      if (conn) conn.release(); //release to pool
+    }
+  });
+
+
+
+  
+app.post("/enviarCorreo", async (req, res) => {
+
+  const{correo} = req.body
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const response = await conn.query(
+      `INSERT INTO correos (correo) VALUE(?)`,
+      [req.body.correoNuevo]
+    );
+
+
+    res.json({ id: parseInt(response.insertId), ...req.body });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+});
+
+
+
+
 
 
   app.listen(port, () => {
