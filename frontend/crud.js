@@ -22,3 +22,16 @@ function redirigirABanos() {
     console.log("Redirigiendo a 'interioresCrud.html'");
     window.location.href = 'interioresCrud.html';
   }
+
+
+
+  let iconoBoton = document.getElementById("contenedorIcono");
+ 
+ let elementoAside = document.getElementById("aside")
+ 
+
+  iconoBoton.addEventListener("click", ()=>{
+
+    elementoAside.classList.toggle("ocultar");
+
+  })

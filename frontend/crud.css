@@ -54,3 +54,57 @@ aside{
 .tablaScroll::-webkit-scrollbar-thumb{
     background-color: white;
 }
+
+.logoResponsive{
+    width: 200px;
+
+}
+
+@media(max-width: 480px){
+    .logoResponsive{
+        width: 80px;
+    }
+}
+
+@media(max-width: 1024px){
+
+   .ocultar{
+    display: none;
+}
+
+
+aside{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    height:  100vh;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.textoAside{
+    margin-left: 0;
+    font-size: 50px;
+}
+
+.asideBotones{
+    margin-top: 50px;
+}
+
+
+}
+
+
+.contenedorIcono svg{
+    width: 50px;
+    height: 50px;
+    border: 2px solid ;
+    margin: 20px;
+}
+
+.contenedorIcono{
+    cursor: pointer;
+}
+
+

@@ -26,16 +26,39 @@ async function bdCorreos(){
 const correo = await bdCorreos();
 
 correo.forEach(element => {
+
     
 tablaHtml.innerHTML += `
 
 <tr>
         <th scope="row">${element.id}</th>
         <td>${element.correo}</td>
-        <td><button class="p-1 w-75 btn btn-danger">Eliminar</button></td>
+        <td><button id="${element.id}" class="p-1 w-75 btn btn-danger eliminar">Eliminar</button></td>
       </tr>
 
 `
+
+const botonEliminar = document.querySelectorAll(".eliminar");
+
+
+console.log(botonEliminar);
+
+
+
+
+botonEliminar.forEach(boton => {
+ 
+ boton.addEventListener('click', function() {
+  location.reload();
+  
+  
+   const elementoId = boton.id
+   console.log(elementoId);
+   eliminar(elementoId);
+   window.alert("Se borro correctamente")
+   
+ });
+});
 
 
 
@@ -67,7 +90,7 @@ tablaHtml.innerHTML += `
   const correoNuevo = document.getElementById("correo").value;
 
   console.log(correoNuevo);
-  
+
    return fetch('http://localhost:3000/enviarCorreo', {
     method: 'POST',
     headers: {
@@ -80,12 +103,47 @@ tablaHtml.innerHTML += `
      .catch(error => {
       console.error('Error en la solicitud:', error);
       return { error: true };
+      
+
+      
 
  })
  
+
+ 
+ 
+ })
+ 
+
+ }
+
+ crudCorreo();
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ function eliminar(id){
+
+  return fetch(`http://localhost:3000/eliminarCorreo/${id}`, {
+    method: 'DELETE',
+ })
+     .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(error => {
+      console.error('Error en la solicitud:', error);
+      return { error: true };
+
  })
 
 
  }
 
- crudCorreo();

@@ -86,6 +86,21 @@ app.post("/enviarCorreo", async (req, res) => {
 
 
 
+app.delete("/eliminarCorreo/:id", async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query("DELETE FROM correos WHERE id=?", [
+      req.params.id,
+    ]);
+    res.json({ message: "Elemento eliminado correctamente" });
+  } catch (error) {
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+});
+
 
 
   app.listen(port, () => {
