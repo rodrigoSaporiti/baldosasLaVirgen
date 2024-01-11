@@ -653,6 +653,7 @@ body{
       justify-content: center;
       align-items: center;
       transition: transform .4s ease-in;
+    
   }
   
   .moveContainer{
@@ -701,6 +702,86 @@ body{
           font-size: 35px;
       }
   }
+
+
+
+/* nuevo contenedor de img */
+
+
+
+#ingresarImagenes{
+  margin-top: 80px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+justify-content: center;
+ 
+}
+
+#ingresarImagenes img{
+
+  width: 60vh;
+  margin: 5px;
+}
+
+
+.portadaGaleria{
+height: 30vh;
+width: 100%;
+background-image: url("imagenes/fondomain.jpg");
+margin-top: 90px;
+}
+
+
+@media(max-width:1685px){
+
+  
+#ingresarImagenes img{
+
+  width: 50vh;
+  
+}
+
+}
+@media(max-width:1289px){
+
+  
+  #ingresarImagenes img{
+  
+    width: 30vh;
+    
+  }
+  }
+
+
+  @media(max-width:523px){
+
+  
+    #ingresarImagenes img{
+    
+      width: 20vh;
+      
+    }
+    }
+
+    @media(max-width:320px){
+
+  
+      #ingresarImagenes img{
+      
+        width: 25vh;
+        
+      }
+      }
+
+
+
+
+
+
+
+
 
 
   /* div index luego de las card y antes del footer*/

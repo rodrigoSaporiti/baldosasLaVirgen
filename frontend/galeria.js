@@ -1,35 +1,84 @@
 function redirigirABanos() {
     console.log("Redirigiendo a 'baños.html'");
-    window.location.href = 'baños.html';
+    window.location.href = 'galeria-info.html';
+    localStorage.setItem("Galeria", "baños")
   }
 
   function redirigirACocinas() {
     console.log("Redirigiendo a 'Cocinas.html'");
-    window.location.href = 'cocinas.html';
+    window.location.href = 'galeria-info.html';
+    localStorage.setItem("Galeria", "cocinas")
   }
 
   function redirigirALocalesComerciales() {
     console.log("Redirigiendo a 'localesComerciales.html'");
-    window.location.href = 'localesComerciales.html';
+    window.location.href = 'galeria-info.html';
+    localStorage.setItem("Galeria", "locales")
   }
 
   function redirigirAExteriores() {
     console.log("Redirigiendo a 'exteriores.html'");
-    window.location.href = 'exteriores.html';
+    window.location.href = 'galeria-info.html';
+    localStorage.setItem("Galeria", "exteriores")
   }
   
   function redirigirAInteriores() {
     console.log("Redirigiendo a 'interiores.html'");
-    window.location.href = 'interiores.html';
+    window.location.href = 'galeria-info.html';
+    localStorage.setItem("Galeria", "interiores")
   }
 
-// Inicio de interacción para las fotos en la galería, se agrega transición cada vez que se clickea la imágen, se envían los atributos de source (ruta de la imágen) y alt que es el texto alternativo por si no se visualiza la foto.
- 
+  const spanGaleria = document.getElementById("spanGaleria")
 
+  const titulo = localStorage.getItem("Galeria");
+
+  spanGaleria.innerHTML = `
+  <b>${titulo}</b>
+  `
+;
+  
+
+
+  async function traerImagenes(){
+
+    try {
+        const response = await fetch("http://localhost:3000/traerImagen");
+        if (!response.ok) {
+          throw new Error('Hubo un problema al obtener los datos');
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(error);
+        return []; // Devuelve un array vacío en caso de error
+      }
+  
+  }
+  
+  let ingresarImagenes = document.getElementById("ingresarImagenes");
+  
+  async function mostrarImagenes (){
+  
+    let imagenesDB = await traerImagenes();
+  
+  imagenesDB.forEach(element => {
+  
+    ingresarImagenes.innerHTML += `
+    
+    <img src="imagenes/baños/${element.nombre}" alt="foto" id="foto${element.id}" class="img">
+             
+    `
+    
+  });
+
+
+  
 const idImagen = document.querySelectorAll('[id^="foto"]')
 
 console.log(idImagen);
-const imagenes = document.querySelectorAll(".img.id");
+const imagenes = document.querySelectorAll(".img");
+
+console.log(imagenes)
 
 
 
@@ -61,12 +110,12 @@ const imagenes = document.querySelectorAll(".img.id");
     containerImage.classList.toggle('moveContainer');
     imgClickeada.classList.toggle('imgTransition');
     imgClickeada.src = srcImagen;
-    copy.innerHTML = altImagen;
+    
   };
 
   const agregarImagen2 = (srcImagen, altImagen, )=>{
     imgClickeada.src = srcImagen;
-    copy.innerHTML = altImagen;
+  
   };
 
   cerrarModal.addEventListener('click', ()=>{
@@ -92,6 +141,15 @@ const imagenes = document.querySelectorAll(".img.id");
         localStorage.setItem("idImg", siguienteImagen.id);
         agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
       }
+
+
+    }else{
+      const imagenes = document.querySelectorAll(".img");
+
+      const srcImagenPrincipio = imagenes[0].getAttribute("src");
+      
+      agregarImagen2(srcImagenPrincipio);
+      
     }
   });
 
@@ -113,6 +171,15 @@ botonAtras.addEventListener("click", () => {
   }
   });
   
+  
+  }
+  
+  mostrarImagenes();
+
+
+  // Inicio de interacción para las fotos en la galería, se agrega transición cada vez que se clickea la imágen, se envían los atributos de source (ruta de la imágen) y alt que es el texto alternativo por si no se visualiza la foto.
+ 
+
 
 
 
