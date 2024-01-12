@@ -30,10 +30,10 @@ function redirigirABanos() {
 
   const spanGaleria = document.getElementById("spanGaleria")
 
-  const titulo = localStorage.getItem("Galeria");
+  const sector = localStorage.getItem("Galeria");
 
   spanGaleria.innerHTML = `
-  <b>${titulo}</b>
+  <b>${sector}</b>
   `
 ;
   
@@ -42,7 +42,7 @@ function redirigirABanos() {
   async function traerImagenes(){
 
     try {
-        const response = await fetch("http://localhost:3000/traerImagen");
+        const response = await fetch(`http://localhost:3000/${sector}`);
         if (!response.ok) {
           throw new Error('Hubo un problema al obtener los datos');
         }
@@ -65,7 +65,7 @@ function redirigirABanos() {
   
     ingresarImagenes.innerHTML += `
     
-    <img src="imagenes/baños/${element.nombre}" alt="foto" id="foto${element.id}" class="img">
+    <img src="imagenes/${sector}/${element.nombre}" alt="foto" id="foto${element.id}" class="img">
              
     `
     

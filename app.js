@@ -2,6 +2,9 @@ const express = require("express");
 const mariadb = require("mariadb");
 const cors = require('cors');
 const multer = require("multer");
+const path = require("path");
+const fs = require("fs").promises;
+
 
 
 
@@ -21,21 +24,30 @@ app.use(express.json());
 app.use(cors());
 
 
+const carpetaDestino = (req, file, cb) => {
+  // Obtiene el destino desde el cuerpo de la solicitud (req.body)
+  const destination = req.params.destination;
+  const rutaCompleta = `frontend/imagenes/${destination}`
+  cb(null, rutaCompleta);
+};
 
 const storage = multer.diskStorage({
-  destination:(req, file, cb) =>{
-     cb(null, "frontend/imagenes/baños/")
-  },
+  destination:  carpetaDestino,
   filename:(req, file, cb) =>{
     cb(null,  file.originalname);
   }
 })
 
 
+
+
 const upload = multer({storage});
 
 
-app.post("/upload", upload.single("file"), async(req,res) =>{
+
+
+
+app.post("/upload/:destination?", upload.single("file"), async(req,res) =>{
   res.send({data:"Imagen Cargada"})
 
 })
@@ -86,7 +98,6 @@ app.get("/", (req, res) => {
   
 app.post("/enviarCorreo", async (req, res) => {
 
-  const{correo} = req.body
   let conn;
   try {
     conn = await pool.getConnection();
@@ -128,44 +139,96 @@ app.delete("/eliminarCorreo/:id", async (req, res) => {
   //----------------------------------------- Imagenes -------------------------------//
 
 
-app.post("/enviarImagen", async (req, res) =>{
+ app.post("/:sector", async (req, res) =>{
+  const sector = req.params.sector
+   let conn;
+   try {
+     conn = await pool.getConnection();
+     const response = await conn.query(
+       `INSERT INTO ${sector} (nombre) VALUE(?)`,
+       [req.body.nombre]
+     );
 
-  const{correo} = req.body
-  let conn;
-  try {
-    conn = await pool.getConnection();
-    const response = await conn.query(
-      `INSERT INTO baños (nombre) VALUE(?)`,
-      [req.body.nombre]
-    );
 
-
-    res.json({ id: parseInt(response.insertId), ...req.body });
+     res.json({ id: parseInt(response.insertId), ...req.body });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Se rompió el servidor" });
-  } finally {
-    if (conn) conn.release(); //release to pool
-  }
+     res.status(500).json({ message: "Se rompió el servidor" });
+   } finally {
+     if (conn) conn.release(); //release to pool
+   }
 
-})
+ })
 
 
-app.get("/traerImagen", async (req, res) => {
+
+
+
+app.get('/:sector', async (req, res) => {
+  const sector = req.params.sector;
+
   let conn;
   try {
     conn = await pool.getConnection();
     const rows = await conn.query(
-      "SELECT * FROM baños"
+      `SELECT * FROM ${sector}`
     );
 
     res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
+
+
+
+
+app.post('/url', async (req, res) => {
+  let conn;
+  try {
+     conn = await pool.getConnection();
+     const response = await conn.query(
+        `INSERT INTO url (ruta) VALUE(?)`,
+        [req.body.dato]
+     );
+
+     res.json({ id: parseInt(response.insertId), ...req.body });
+  } catch (error) {
+     console.log(error); // Agrega esta línea para registrar el error en la consola del servidor
+     res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+     if (conn) conn.release(); //release to pool
+  }
+});
+
+
+
+
+
+
+
+app.delete("/eliminarImagen/:sector/:id", async (req, res) => {
+
+  const sector = req.params.sector;
+  const id = req.params.id;
+
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query(`DELETE FROM ${sector} WHERE id = ?`, [id]);
+    res.json({ message: "Elemento eliminado correctamente de db" });
   } catch (error) {
     res.status(500).json({ message: "Se rompió el servidor" });
   } finally {
     if (conn) conn.release(); //release to pool
   }
 });
+
+
 
 
 
@@ -182,3 +245,7 @@ app.get("/traerImagen", async (req, res) => {
     console.log('Aplicación apagada de forma grácil');
     process.exit(0);
   });
+
+
+
+

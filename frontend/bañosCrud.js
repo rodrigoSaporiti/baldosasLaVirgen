@@ -1,12 +1,26 @@
 const botonEnviar = document.getElementById("enviar");
 
+
+
+
+
+
+const sector = localStorage.getItem("sectorCrud")
+
+
+
+
+
+
+
+
 async function enviarArchivo(elemento) {
     const formData = new FormData();
     formData.append('file', elemento.files[0]); // elemento es un input de tipo file
     console.log(formData)
 
     try {
-        const response = await fetch('http://localhost:3000/upload', {
+        const response = await fetch(`http://localhost:3000/upload/${sector}`, {
             method: 'POST',
             body: formData,
         });
@@ -27,9 +41,10 @@ async function enviarArchivo(elemento) {
 
  async function guardarNombre(imagen){
 
+
     let nombre = imagen.value.split("\\").pop()
 
-    return fetch('http://localhost:3000/enviarImagen', {
+    return fetch(`http://localhost:3000/${sector}`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',
@@ -60,11 +75,10 @@ botonEnviar.addEventListener("click", (event) => {
 
 
 
-
 async function traerImagenes(){
 
     try {
-        const response = await fetch("http://localhost:3000/traerImagen");
+        const response = await fetch(`http://localhost:3000/${sector}`);
         if (!response.ok) {
           throw new Error('Hubo un problema al obtener los datos');
         }
@@ -74,8 +88,12 @@ async function traerImagenes(){
         console.error(error);
         return []; // Devuelve un array vacío en caso de error
       }
+  
+  }
 
-}
+
+
+
 
 const agregarTabla = document.getElementById("agregarTabla");
 
@@ -89,12 +107,81 @@ async function mostrarImagenes(){
         agregarTabla.innerHTML+= `
       <tr>
       <th scope="row">${element.id}</th>
-      <td><img src="imagenes/baños/${element.nombre}" width="100px" alt=""></td>
-      <td><button class="p-1 w-100 btn btn-danger">Eliminar</button></td>
+      <td><img class="rutaImagen" src="imagenes/${sector}/${element.nombre}" width="100px" alt=""></td>
+      <td><button class="p-1 w-100 btn btn-danger eliminar" id="${element.id}" data-img="frontend/imagenes/${sector}/${element.nombre}">Eliminar</button></td>
     </tr>
         `
-    });
+   
+
+});
+
+
+let eliminar = document.querySelectorAll(".eliminar")
+console.log(eliminar)
+
+
+eliminar.forEach(boton => {
+
+    boton.addEventListener("click", ()=>{
+
+        const eliminarID = boton.id;
+      
+       
+      
+        
+        
+        urlEnviar();
+        eliminarDB(eliminarID);
+       
+         
+    
+    
+    })
+    
+});
+
+
+
 
 }
+
+
+
+
+
+    function urlEnviar(){
+
+    return fetch("http://localhost:3000/url", {
+    method: 'POST',
+    headers: {
+       'Content-Type': 'application/json',
+        },
+     body: JSON.stringify({dato: "sadssdasa"}),
+ })
+     .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(error => {
+      console.error('Error en la solicitud:', error);
+      return { error: true };
+      
+ })
+ 
+}
+
+
+
+     function eliminarDB(id){
+    return fetch(`http://localhost:3000/eliminarImagen/${sector}/${id}`,{
+        method: 'DELETE',
+     })
+         .then(response => response.json())
+         .then(data => console.log(data))
+         .catch(error => {
+          console.error('Error en la solicitud:', error);
+          return { error: true };
+    
+     })
+}
+
 
 mostrarImagenes();
