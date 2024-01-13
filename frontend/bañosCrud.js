@@ -108,7 +108,7 @@ async function mostrarImagenes(){
       <tr>
       <th scope="row">${element.id}</th>
       <td><img class="rutaImagen" src="imagenes/${sector}/${element.nombre}" width="100px" alt=""></td>
-      <td><button class="p-1 w-100 btn btn-danger eliminar" id="${element.id}" data-img="frontend/imagenes/${sector}/${element.nombre}">Eliminar</button></td>
+      <td><button class="p-1 w-100 btn btn-danger eliminar" id="${element.id}" data-img="${element.nombre}">Eliminar</button></td>
     </tr>
         `
    
@@ -125,48 +125,42 @@ eliminar.forEach(boton => {
     boton.addEventListener("click", ()=>{
 
         const eliminarID = boton.id;
-      
+
+        const ruta = boton.getAttribute("data-img")
+
+       console.log(ruta, sector)
+         eliminarDB(eliminarID);
+        eliminarArchivo(ruta);
        
-      
-        
-        
-        urlEnviar();
-        eliminarDB(eliminarID);
-       
-         
-    
     
     })
     
 });
 
 
+}
 
 
+function eliminarArchivo(ruta){
+
+    return fetch(`http://localhost:3000/${ruta}/${sector}`, {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => {
+        console.error('Error en la solicitud:', error);
+        return { error: true };
+    });
 }
 
 
 
-
-
-    function urlEnviar(){
-
-    return fetch("http://localhost:3000/url", {
-    method: 'POST',
-    headers: {
-       'Content-Type': 'application/json',
-        },
-     body: JSON.stringify({dato: "sadssdasa"}),
- })
-     .then(response => response.json())
-     .then(data => console.log(data))
-     .catch(error => {
-      console.error('Error en la solicitud:', error);
-      return { error: true };
-      
- })
- 
-}
 
 
 

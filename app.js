@@ -53,12 +53,23 @@ app.post("/upload/:destination?", upload.single("file"), async(req,res) =>{
 })
 
 
+app.post("/upload/mosaicos", upload.single("file"), async(req,res) =>{
+  res.send({data:"Imagen Cargada"})
+
+})
+
+
 app.get("/", (req, res) => {
     res.send("<h1>Bienvenid@ al servidor</h1>");
   });
 
 
-  app.get("/mosaicos", async (req, res) => {
+
+  
+  //----------------------------------------- Mosaicos -------------------------------//
+
+
+  app.get("/mosaicosDB", async (req, res) => {
     let conn;
     try {
       conn = await pool.getConnection();
@@ -73,6 +84,83 @@ app.get("/", (req, res) => {
       if (conn) conn.release(); //release to pool
     }
   });
+
+
+  app.get("/mosaicosDB/:sector", async (req, res) => {
+
+    const sector = req.params.sector;
+
+    let conn;
+    try {
+      conn = await pool.getConnection();
+      const rows = await conn.query(
+        "SELECT * FROM mosaicos WHERE id=?",
+        [sector]
+      );
+  
+      res.json(rows);
+    } catch (error) {
+      res.status(500).json({ message: "Se rompió el servidor" });
+    } finally {
+      if (conn) conn.release(); //release to pool
+    }
+  });
+
+
+  app.put("/mosaicos/:id", async (req, res) => {
+    const id = req.params.id;
+    const { titulo, img, tamaño, metro, peso } = req.body.datos;
+  
+    let conn;
+    try {
+      conn = await pool.getConnection();
+  
+      // Utilizamos placeholders (?) en la consulta y pasamos los valores como un array en el segundo parámetro de conn.query
+      const sql = "UPDATE mosaicos SET titulo = ?, img = ?, tamaño = ?, metro = ?, peso = ? WHERE id = ?";
+      const params = [titulo, img, tamaño, metro, peso, id];
+  
+      const result = await conn.query(sql, params);
+  
+      res.json({ message: "Actualización exitosa", affectedRows: result.affectedRows });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Se rompió el servidor" });
+    } finally {
+      if (conn) conn.release();
+    }
+  });
+  
+
+
+   
+ app.post("/mosaicos", async (req, res) =>{
+
+  const{titulo, img, tamaño, metro, peso} = req.body.datos
+ 
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const response = await conn.query(
+      `INSERT INTO mosaicos (titulo, img, tamaño, metro, peso) VALUE(?, ?, ?, ?, ?)`,
+      [titulo, img, tamaño, metro, peso]
+    );
+
+
+    res.json({ id: parseInt(response.insertId), ...req.body });
+ } catch (error) {
+   console.log(error);
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+
+})
+
+
+
+ 
+ 
+
 
   //----------------------------------------- Correos -------------------------------//
 
@@ -187,23 +275,7 @@ app.get('/:sector', async (req, res) => {
 
 
 
-app.post('/url', async (req, res) => {
-  let conn;
-  try {
-     conn = await pool.getConnection();
-     const response = await conn.query(
-        `INSERT INTO url (ruta) VALUE(?)`,
-        [req.body.dato]
-     );
 
-     res.json({ id: parseInt(response.insertId), ...req.body });
-  } catch (error) {
-     console.log(error); // Agrega esta línea para registrar el error en la consola del servidor
-     res.status(500).json({ message: "Se rompió el servidor" });
-  } finally {
-     if (conn) conn.release(); //release to pool
-  }
-});
 
 
 
@@ -231,7 +303,64 @@ app.delete("/eliminarImagen/:sector/:id", async (req, res) => {
 
 
 
+app.delete("/:ruta/:sector", async (req, res) => {
 
+  const rutaArchivo = req.params.ruta;
+  const sector = req.params.sector;
+
+  const rutaTotal = `frontend/imagenes/${sector}/${rutaArchivo}`
+ 
+  let conn;
+  
+  try {
+    // Verificamos si el archivo existe
+    await fs.access(rutaTotal);
+
+    // Si existe, intentamos eliminarlo
+    await fs.unlink(rutaTotal);
+
+    res.json({ message: "Archivo eliminado correctamente" });
+  } catch (error) {
+    console.error(error);
+
+    // Si hay algún error al acceder o eliminar el archivo, respondemos con un mensaje de error
+    res.status(500).json({ message: "Error al eliminar el archivo" });
+  }
+});
+
+
+app.delete("/:ruta", async (req, res) => {
+
+  const rutaArchivo = req.params.ruta;
+  
+
+  const rutaTotal = `frontend/imagenes/mosaicos/${rutaArchivo}`
+ 
+  let conn;
+  
+  try {
+    // Verificamos si el archivo existe
+    await fs.access(rutaTotal);
+
+    // Si existe, intentamos eliminarlo
+    await fs.unlink(rutaTotal);
+
+    res.json({ message: "Archivo eliminado correctamente" });
+  } catch (error) {
+    console.error(error);
+
+    // Si hay algún error al acceder o eliminar el archivo, respondemos con un mensaje de error
+    res.status(500).json({ message: "Error al eliminar el archivo" });
+  }
+});
+
+
+
+
+
+
+
+ 
 
 
 
