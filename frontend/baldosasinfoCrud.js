@@ -72,17 +72,17 @@ let imagenActualData = imagenActual.getAttribute("data-img")
 
 
 let imagen = document.getElementById("imagenMosaico");
+let nombre = imagen.value.split("\\").pop();
  
 
 if(imagen.files.length ==0){
 
-    imagen = imagenActual;
-    actualizar(imagen, titulo , tamaño, metro , peso)
+    actualizar(imagenActualData, titulo , tamaño, metro , peso)
    
 }else{
-    eliminarArchivo(imagenActual);
+    eliminarArchivo(imagenActualData);
     enviarArchivo(imagen);
-    actualizar(imagen, titulo , tamaño, metro , peso)
+    actualizar(nombre, titulo , tamaño, metro , peso)
 }
 
     
@@ -107,13 +107,10 @@ if(imagen.files.length ==0){
   function actualizar(imagen, a , b , c , d){
 
     
-   
-
-    let nombre = imagen.value.split("\\").pop();
 
    datos = {
     titulo : a ,
-    img : nombre ,
+    img : imagen ,
     tamaño : b ,
     metro : c ,
     peso: d
@@ -182,3 +179,128 @@ function eliminarArchivo(ruta){
         return { error: true };
     });
 }
+
+
+
+let botonImagenes = document.getElementById("enviarImgMosaicos");
+
+
+
+botonImagenes.addEventListener("click", ()=>{
+
+    let imagen = document.getElementById("imagenesMosaicos");
+
+
+    enviarArchivo(imagen);
+    guardarNombre(imagen);
+
+
+})
+
+
+
+
+function guardarNombre(imagen){
+
+
+    let nombre = imagen.value.split("\\").pop()
+
+ 
+
+    return fetch(`http://localhost:3000/mosaicosImagenes/${sector}`, {
+    method: 'POST',
+    headers: {
+       'Content-Type': 'application/json',
+        },
+     body: JSON.stringify({nombre}),
+ })
+     .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(error => {
+      console.error('Error en la solicitud:', error);
+      return { error: true };
+      
+ })
+ 
+}
+
+
+
+
+
+async function traerImagenes(){
+
+    try {
+        const response = await fetch(`http://localhost:3000/mosaicosImagenes/${sector}`);
+        if (!response.ok) {
+          throw new Error('Hubo un problema al obtener los datos');
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(error);
+        return []; // Devuelve un array vacío en caso de error
+      }
+  
+  }
+
+
+let tbody = document.getElementById("tbody")
+  
+  async function mostrarImagenes() {
+const mosaicos = await traerImagenes();
+
+    mosaicos.forEach(element => {
+        tbody.innerHTML += `
+        <tr>
+        <th scope="row">${element.id}</th>
+        <td><img class="rutaImagen" src="imagenes/mosaicos/${element.ruta}" width="100px" alt=""></td>
+        <td><button class="p-1 w-100 mt-5 btn btn-danger eliminar" id="${element.id}" data-img="${element.ruta}">Eliminar</button></td>
+      </tr>
+        `;
+
+        
+    });
+
+
+    
+let eliminar = document.querySelectorAll(".eliminar")
+console.log(eliminar)
+
+
+eliminar.forEach(boton => {
+
+    boton.addEventListener("click", ()=>{
+
+        const eliminarID = boton.id;
+
+        const ruta = boton.getAttribute("data-img")
+
+       console.log(ruta, sector)
+         eliminarDB(eliminarID);
+        eliminarArchivo(ruta);
+       
+    
+    })
+    
+});
+
+}
+
+
+
+     function eliminarDB(id){
+    return fetch(`http://localhost:3000/eliminarImagen/mosaicos/${id}`,{
+        method: 'DELETE',
+     })
+         .then(response => response.json())
+         .then(data => console.log(data))
+         .catch(error => {
+          console.error('Error en la solicitud:', error);
+          return { error: true };
+    
+     })
+}
+
+
+mostrarImagenes();

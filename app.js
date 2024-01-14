@@ -158,8 +158,73 @@ app.get("/", (req, res) => {
 
 
 
+   
+app.post("/mosaicosImagenes/:sector", async (req, res) =>{
+
+  const nombre = req.body.nombre;
+  const id = req.params.sector;
+ 
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const response = await conn.query(
+      `INSERT INTO imagenmosaico (ruta, IDimg) VALUE(?, ?)`,
+      [nombre, id]
+    );
+
+
+    res.json({ id: parseInt(response.insertId), ...req.body });
+ } catch (error) {
+   console.log(error);
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+
+})
+
+
+
+
+app.get("/mosaicosImagenes/:sector", async (req, res) => {
+
+  const sector = req.params.sector;
+
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query(
+      "SELECT * FROM imagenmosaico WHERE IDimg=?",
+      [sector]
+    );
+
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+});
  
  
+
+
+app.delete("/eliminarImagen/mosaicos/:id", async (req, res) => {
+
+  const id = req.params.id;
+
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const rows = await conn.query(`DELETE FROM imagenmosaico WHERE id = ?`, [id]);
+    res.json({ message: "Elemento eliminado correctamente de db" });
+  } catch (error) {
+    res.status(500).json({ message: "Se rompió el servidor" });
+  } finally {
+    if (conn) conn.release(); //release to pool
+  }
+});
+
 
 
   //----------------------------------------- Correos -------------------------------//
