@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="crud.css" />
+ 
+ 
+
+</head>
+<body class="bg-dark text-white">
+
+
+  <div class="contenedorIcono d-lg-none" id="contenedorIcono">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </div>
+  
+  
+  
+  <div class="row">
+  
+  
+    
+  
+  
+  
+  
+  <div class="col-0 col-lg-2">
+  
+  
+    
+  <aside class="bg-light text-dark ocultar" id="aside">
+  
+    <a href="index-crud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Inicio</span></h3></a>
+    <a href="clientesCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Clientes</span></h3></a>
+    <a href="galeriaCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Galeria</span></h3></a>
+    <a href="lisasCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Lisas</span></h3></a>
+    <a href="mosaicosCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Mosaicos</span></h3></a>
+  
+  
+  
+  
+  
+  </aside>
+  
+
+</div>
+
+
+
+<div class="col-lg-10 col-12">
+
+  <h1 class="text-center mt-4">Galeria</h1>
+
+
+
+  <main class="m">
+
+<div class="row d-flex p-0">
+
+    <div class="col-6  p-0">
+
+    <table class="text-white w-75  m-auto mt-5 rounded-2">
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirAmarillas()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">AMARILLAS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirAzules()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">AZULES</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+      
+      
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirBlancas()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">BLANCAS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+      
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirCremas()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">CREMAS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+     
+      
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirCueros()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">CUEROS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+     
+ 
+    </table>
+    </div>
+
+    <div class="col-6 m-0 p-0">
+
+        <table class="text-white w-75 m-auto mt-5 rounded-2">
+
+
+     
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirGrises()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">GRISES</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirNegros()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">NEGROS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirRojos()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">ROJOS</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+      <tr class="tablaCard">
+        <td class="align-items-center d-flex bg-dark" onclick="redirigirVerdes()">
+          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
+          <h4 class="m-auto">VERDES</h4>
+          <h4 class="me-3">></h4>
+        </td>
+      </tr>
+
+
+
+    </table>
+
+
+   
+    </div>
+
+</div>
+
+    </main>
+
+
+
+</div>
+
+</div>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="crud.js"></script>
+    <script src="lisasCrud.js"></script>
+    
+</body>
+
+
+
+</html>

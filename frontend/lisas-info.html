@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="crud.css" />
+ 
+ 
+
+</head>
+<body class="bg-dark text-white">
+
+
+  <div class="contenedorIcono d-lg-none" id="contenedorIcono">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </div>
+  
+  
+  
+  <div class="row">
+  
+  
+    
+  
+  
+  
+  
+  <div class="col-0 col-lg-2">
+  
+  
+    
+  <aside class="bg-light text-dark ocultar" id="aside">
+  
+    <a href="index-crud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Inicio</span></h3></a>
+    <a href="clientesCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Clientes</span></h3></a>
+    <a href="galeriaCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Galeria</span></h3></a>
+    <a href="lisasCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Lisas</span></h3></a>
+    <a href="mosaicosCrud.html" class="text-decoration-none  text-dark"><h3 class="asideBotones"><span class="textoAside">Mosaicos</span></h3></a>
+  
+  
+  
+  
+  
+  </aside>
+  
+
+</div>
+
+
+
+<div class="col-10 ">
+
+    <div class="row text-dark">
+        <div class="col-6 d-flex justify-content-end"><h1 class="text-center text-white mt-4 text-uppercase"><span id="tituloGaleriaCrud"></span></h1></div>
+        <div class="col-6 m-0 m-auto d-flex justify-content-center">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+ Agregar Imagen</button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+
+                        <input type="file" class="form-control" id="imagenLisas">
+                      </div>
+                     
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+  
+</div>
+
+
+  <div class="tablaScroll">
+
+  <table class="table container w-75 text-white">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody id="agregarTabla">
+
+    
+  
+    </tbody>
+  </table>
+
+</div>
+
+  
+
+ 
+
+</div>
+
+
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="lisasCrud.js"></script>
+    
+    
+</body>
+
+
+
+</html>

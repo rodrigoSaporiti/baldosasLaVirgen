@@ -8,7 +8,8 @@ let modal = document.getElementById("modalMosaicoInfo");
 
 
 
-async function bdMosaicos(){
+
+ async function bdMosaicos(){
     try {
       const response = await fetch(`http://localhost:3000/mosaicosDB/${sector}`);
       if (!response.ok) {
@@ -21,7 +22,6 @@ async function bdMosaicos(){
       return []; // Devuelve un array vacío en caso de error
     }
   };
-  
 
    async function mostrar(){
    

@@ -35,15 +35,16 @@ html{
 }
 
 body{
-  font-family: 'Lato', sans-serif;
+  font-family: 'DM Serif Display', serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .baldosaslv{
-  font-family: Georgia, 'Times New Roman', Times, serif;
- 
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 20px;
 }
 
 /* Barra de Navegación*/
@@ -62,15 +63,6 @@ body{
 }
 
 
-
-.barraFooter{
-    background: linear-gradient(#000000,rgb(36, 36, 36));
-   padding: 5px;
-   margin-top: auto;
-   margin-top: 200px;
-   font-family: Arial, Helvetica, sans-serif;
-
-}
 
 
 .marginUl{
@@ -168,6 +160,8 @@ body{
   .carousel-inner img {
     object-fit: cover;
   }
+
+
 
   @media (min-width: 1140px){
     #carouselExampleCaptions {
@@ -344,7 +338,7 @@ body{
 
   @media(min-width: 1140px){
     .logo{
-        margin-left: 1% ;
+        margin-left: 7% ;
     }
   }
 
@@ -805,6 +799,19 @@ margin-top: 90px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
  }
 
+@media(max-width: 480px){
+  .carousel{
+    width: 95%;
+    
+  }
+}
+
+.backgroundMain img{
+  object-fit: scale-down;
+  width: 100%;
+ 
+}
+
  /* Estilo opcional: redondea las esquinas del carousel */
 .carousel-inner {
   border-radius: 8px;
@@ -822,11 +829,11 @@ margin-top: 90px;
 
 .backgroundMain {
   position: relative;
-  height: 70vh;
+  height: 80%;
   background-image: url('/frontend/imagenes/fondomain.jpg');
   background-size: cover;
   background-position: center;
-  overflow: hidden; /* Para evitar que el contenido sobresalga del fondo */
+     /* Para evitar que el contenido sobresalga del fondo */
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -834,21 +841,82 @@ margin-top: 90px;
 }
 
 
+.backgroundText {
 
-.backgroundContent {
-  position: relative;
-  z-index: 2; /* Asegura que el contenido esté por encima del fondo de color */
   text-align: center; 
-  color: rgb(32, 31, 31);
-  left: 20%;
-  padding: 20px; 
+  color: rgb(134, 131, 131);
 }
 
-.backgroundText {
-  position: relative;
-  z-index: 2; 
-  text-align: center; 
-  color: rgb(134, 131, 131); 
+@media(max-width: 360px){
+  .backgroundText{
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+.catalogo{
+  height: 100vh;
+}
+
+
+
+
+
+.vh100{
+margin-top: 120px;
+height: 80vh;
+}
+
+@media(max-width: 951px) {
+
+  .vh100{
+    margin-top: 120px;
+    height: 60vh;
+  }
+}
+
+@media(max-width: 480px) {
+
+  .vh100{
+    margin-top: 120px;
+    height: 80vh;
+  }
+}
+
+
+
+
+@media(max-width: 360px) {
+
+  .vh100{
+    margin-top: 50px;
+  }
+}
+
+@media(max-height: 860px) {
+
+  .vh100{
+    height: 90vh;
+  }
+}
+
+
+
+
+.barraFooter{
+  background: linear-gradient(#000000,rgb(36, 36, 36));
+ padding: 5px;
+ font-family: Arial, Helvetica, sans-serif;
+
+}
+
+@media(max-width:350px){
+.barraFooter{
+ margin-top: 200px;
+}
 }
 
 

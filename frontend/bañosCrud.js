@@ -106,7 +106,7 @@ async function mostrarImagenes(){
 
         agregarTabla.innerHTML+= `
       <tr>
-      <th scope="row">"holaa"</th>
+      <th scope="row"></th>
       <td><img class="rutaImagen" src="imagenes/${sector}/${element.nombre}" width="100px" alt=""></td>
       <td><button class="p-1 w-100 btn btn-danger eliminar" id="${element.id}" data-img="${element.nombre}">Eliminar</button></td>
     </tr>

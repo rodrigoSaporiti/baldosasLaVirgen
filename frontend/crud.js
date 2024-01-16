@@ -1,3 +1,19 @@
+
+
+let iconoBoton = document.getElementById("contenedorIcono");
+ 
+let elementoAside = document.getElementById("aside")
+
+
+ iconoBoton.addEventListener("click", ()=>{
+
+   elementoAside.classList.toggle("ocultar");
+
+ })
+
+
+
+
 function redirigirABanos() {
     console.log("Redirigiendo a 'baños.html'");
     window.location.href = 'GaleriaInfoCrud.html';
@@ -41,15 +57,3 @@ tituloGaleriaCrud.innerHTML=`
 
 
 
-
-
-  let iconoBoton = document.getElementById("contenedorIcono");
- 
- let elementoAside = document.getElementById("aside")
- 
-
-  iconoBoton.addEventListener("click", ()=>{
-
-    elementoAside.classList.toggle("ocultar");
-
-  })

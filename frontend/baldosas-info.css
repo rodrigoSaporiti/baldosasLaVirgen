@@ -2,9 +2,15 @@
 .imagenBaldosasInfo{
 
     width: 400px ;
+    height: 400px;
   }
   
-  
+  @media(max-width:480px){
+    .imagenBaldosasInfo{
+      width: 300px;
+      height: 300px;
+    }
+  }
 
 .imagenGaleriaInfo:hover{
     filter: grayscale(100%);

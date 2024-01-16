@@ -57,17 +57,35 @@
     
         mosaicos.forEach(elemento => {
             let tarjetaHTML = `
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
-                        <img src="imagenes/${elemento.img}" class="card-img-top" alt="" style="height: 150px;">
-                        <h5 class="card-title text-center">${elemento.nombre}</h5>
-                        <a href="baldosas-info.html" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
-                    </div>
-                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+            <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
+                <img src="imagenes/mosaicos/${elemento.img}" class="card-img-top" alt="" style="height: 150px;">
+                <h5 class="card-title text-center text-dark">${elemento.titulo}</h5>
+            <a href="baldosas-info.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
+            </div>
+        </div>
             `;
     
             tarjetasContainer.innerHTML += tarjetaHTML;
+
+            
+    let botones = document.querySelectorAll("#botonMosaicoCrud");
+
+    botones.forEach(element => {
+
+        element.addEventListener("click", ()=>{
+
+            let idMosaico = element.getAttribute("data-btn");
+
+            console.log(idMosaico)
+            localStorage.setItem("Mosaico", idMosaico)
+        })
+        
+    });
         });
     }
     
     mostrarCards();
+
+
+    
