@@ -22,7 +22,21 @@
     object-fit: cover;
     width: 200px;
     height: 200px;
-    margin: 2px;
+    margin: 10px;
+  }
+
+  @media(max-width:480px){
+    .imagenGaleriaInfo{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media(max-width:359px){
+    .imagenGaleriaInfo{
+      width: 140px;
+      height: 140px;
+    }
   }
   
   .cardBaldosasInfo{

@@ -49,7 +49,7 @@
       <a class="navbar-brand me-1 p-0" href="index.html">
         <img src="imagenes/sinTexto.png" alt="logo" width="40" height="38" class="m-0" />
       </a>
-      <p class="baldosaslv ms-1  m-0 p-0">Baldosas LV </p>
+      <a href="index.html" class="text-decoration-none"><p class="baldosaslv ms-1  m-0 p-0">Baldosas LV </p></a>
     </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,11 +108,6 @@
               class="d-inline-block align-text-top m d-none d-lg-block" />
           </a>
 
-          <a class="navbar-brand  d-none d-lg-block" href="#">
-            <img src="imagenes/TELEFONO.png" alt="" height="23"
-              class="d-inline-block align-text-top m d-none d-lg-block" />
-          </a>
-
 
         </ul>
       </div>
@@ -120,7 +115,7 @@
   </nav>
 
 
-  <header class="d-flex m-0 ">
+  <header class="d-lg-flex  w-100 m-0 ">
 
     <div class="d-none d-lg-flex bg-container d-flex justify-content-center flex-column align-items-center">
       <img class="imagenFondo" src="imagenes/piso2.jpg">
@@ -137,42 +132,31 @@
 
 
     <div id="carouselExampleCaptions" class="carousel slide m-0 " data-bs-ride="carousel">
+     
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
           aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
+        
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="imagenes/portada.jpg" class="d-block w-100 img-fluid imagen" alt="..." />
+          <img src="imagenes/portada.jpg" class="d-block   imagen" alt="..." />
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>
-              Some representative placeholder content for the first slide.
-            </p>
+            <h3 class="mb-3">Lisas</h3>
+           
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/portada2(1)desenfoque.jpg" class="d-block w-100  img-fluid imagen" alt="..." />
+          <img src="imagenes/portada2(1)desenfoque.jpg" class="d-block  imagen" alt="..." />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>
-              Some representative placeholder content for the second slide.
-            </p>
+            <h5 class="mb-5">Mosaicos</h5>
+           
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="imagenes/portada3.jpg" class="d-block w-100 img-fluid imagen" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>
-              Some representative placeholder content for the third slide.
-            </p>
-          </div>
-        </div>
+        
+       
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev">
@@ -310,8 +294,8 @@
 <div class="w-100 text-center m-auto">
 <p class="text-white mt-2 ">Suscribite para recibir las ultima novedades</p>
 
-<input type="text" placeholder="Email" class="inputFooter">
-<button class="btnSus">SUSCRIBIRME</button>
+<input type="text" placeholder="Email" class="inputFooter" id="correo" >
+<button class="btnSus" id="enviarCorreo">SUSCRIBIRME</button>
 
 
 
@@ -391,8 +375,12 @@
 </div>
 </footer>
 
-  <script src="..index.js"></script>
+
   <script src="../js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+  <script src="enviarCorreos.js"></script>
+ 
+
 </body>
 
 </html>

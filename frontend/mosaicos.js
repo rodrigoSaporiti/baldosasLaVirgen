@@ -57,16 +57,23 @@
     
         mosaicos.forEach(elemento => {
             let tarjetaHTML = `
-            <div class="col-6 col-md-4 col-lg-2">
-            <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
-                <img src="imagenes/mosaicos/${elemento.img}" class="card-img-top" alt="" style="height: 150px;">
-                <h5 class="card-title text-center text-dark">${elemento.titulo}</h5>
-            <a href="baldosas-info.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
+
+
+            <div class="cardMosaico" onclick="redirigirABaldosasinfo(${elemento.id})">
+            <div class="" style="width: 250px;">
+                <img src="imagenes/mosaicos/${elemento.img}"  alt="" style="height: 250px; width:250px">
+
+                <h5 class=" mt-2 text-center text-white">${elemento.titulo}</h5>
+            <a href="baldosas-info.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark w-100 p-1 rounded-0 mt-3">Ver Más.. </a>
             </div>
         </div>
+
+        
             `;
     
             tarjetasContainer.innerHTML += tarjetaHTML;
+
+       
 
             
     let botones = document.querySelectorAll("#botonMosaicoCrud");
@@ -83,6 +90,17 @@
         
     });
         });
+    }
+
+
+    function redirigirABaldosasinfo(id){
+
+        let idMosaico =id
+
+        console.log(idMosaico)
+        localStorage.setItem("Mosaico", idMosaico)
+        window.location.href = 'baldosas-info.html';
+
     }
     
     mostrarCards();

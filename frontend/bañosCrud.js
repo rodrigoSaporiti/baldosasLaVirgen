@@ -42,7 +42,7 @@ async function enviarArchivo(elemento) {
  async function guardarNombre(imagen){
 
 
-    let nombre = imagen.value.split("\\").pop()
+    let nombre = imagen.value.split("\\").pop(); 
 
     return fetch(`http://localhost:3000/${sector}`, {
     method: 'POST',
