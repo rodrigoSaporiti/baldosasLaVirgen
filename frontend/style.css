@@ -15,8 +15,11 @@ background: linear-gradient(190deg, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 
 .imagen{
     height: 725px;
     width: 100%;
+    cursor: pointer;
    
 }
+
+
 
 .contenedorNav{
   display: flex;
@@ -628,25 +631,7 @@ body{
       transition: filter .5s;
   }
   
-  .img1{
-      grid-area: img1;
-  }
   
-  .img2{
-      grid-area: img2;
-  }
-  
-  .img3{
-      grid-area: img3;
-  }
-  
-  .img4{
-      grid-area: img4;
-  }
-  
-  .img5{
-      grid-area: img5;
-  }
   
   .containerImg{
       position: fixed;
@@ -698,6 +683,7 @@ body{
   @media screen and (max-width:700px){
       .imgShow{
           width: 70%;
+          height: 55%;
       }
   
       .copy{
@@ -710,6 +696,17 @@ body{
       }
   }
 
+  @media screen and (max-width: 1000px) and (max-height: 1500px) {
+    .imgShow{
+      width: 70%;
+      height: 55%;
+    }
+    .bx.bx-x{
+      right: 50px;
+      font-size: 35px;
+  }
+  }
+  
 
 
 /* nuevo contenedor de img */
@@ -981,3 +978,21 @@ margin-top: auto;
 
 
  
+  /* Boton Crud*/
+
+
+  .btnSesion{
+    transform: translateY(200%);
+  }
+
+
+  .mainContacto{
+    margin-top: 200px;
+  }
+
+  @media(max-width:480px){
+
+    .mainContacto{
+      margin-top: 100px;
+    }
+  }

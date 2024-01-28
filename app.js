@@ -4,9 +4,9 @@ const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs").promises;
+const jwt = require("jsonwebtoken");
 
-
-
+const secretKey = "baldosaslv49122024"
 
 
 const pool = mariadb.createPool({
@@ -62,6 +62,57 @@ app.post("/upload/mosaicos", upload.single("file"), async(req,res) =>{
 app.get("/", (req, res) => {
     res.send("<h1>Bienvenid@ al servidor</h1>");
   });
+
+
+
+  
+
+//----------------------------------------- ADMIN -------------------------------//
+
+
+
+app.post('/login', (req, res) => {
+  // Verifica las credenciales (puedes implementar tu lógica de autenticación aquí).
+  const { username, password } = req.body;
+
+  // Simulamos una autenticación exitosa
+  if (username === 'admin' && password === 'baldosas4912') {
+    // Crea un token
+    const token = jwt.sign({ username }, secretKey);
+
+    // Muestra el token en la consola del servidor
+    console.log('Token de sesión:', token);
+
+    // Puedes enviar el token al cliente si es necesario
+    res.json({ token });
+  } else {
+    res.status(401).json({ error: 'Credenciales incorrectas' });
+  }
+});
+
+
+function verificarToken(req, res, next){
+ const token = req.headers["authorization"];
+ if(!token){
+   return res.status(403).json({mensaje:"Acceso no autorizado"});
+ }
+
+ jwt.verify(token, secretKey, (err,decoded)=>{
+
+   if(err){
+     return res.status(401).json({mensaje:"token invalido"});
+   }
+
+   req.user = decoded;
+   next();
+ })
+}
+
+
+app.get("/crud", verificarToken, (rq,res)=>{
+  res.json({mensaje: "bienvenido al area de admin"})
+})
+
 
 
 
@@ -418,14 +469,6 @@ app.delete("/:ruta", async (req, res) => {
     res.status(500).json({ message: "Error al eliminar el archivo" });
   }
 });
-
-
-
-
-
-
-
- 
 
 
 

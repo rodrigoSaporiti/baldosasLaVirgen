@@ -1,53 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function(){
-
-// let imagenes =
-//     [
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg},
-//     {img: imagenes/bathrom2.jpg}
-// ]
-
-
-
-// let contador = 0;
-// const contenedor = document.querySelector(".slideshow");
-// const overlay= document.querySelector(".overlay");
-// const galeria_imagenes = document.querySelectorAll(".galeria img");
-// const img_slideshow = document.querySelector(".slideshow img");
-
-
-// contenedor.addEventListener("click", function(event){
- 
-//     let atras = contenedor.querySelector(".atras");
-//     let adelante = contenedor.querySelector(".adelante");
-//     let img = contenedor.querySelector("img");
-
-//     let tgt = event.target;
-
-//     if(tgt == atras){
-//         if(contador>0){
-//             img.src = imagnes[contador - 1].img
-//             contador--
-//     }
-     
-
-
-
-
-
-// })
-
-// })
 
 
 const imagenes = document.querySelectorAll(".imagenGaleriaInfo");
@@ -58,7 +8,7 @@ const imgClickeada = document.querySelector('.imgShow');
 
 const copy = document.querySelector('.copy');
 
-const cerrarModal = document.querySelector('.bx.bx-x');
+
 
 
 
@@ -68,7 +18,7 @@ imagenes.forEach(imagen => {
       agregarImagen(imagen.getAttribute('src'), imagen.getAttribute('alt'));
     })
 
-  })
+  });
 
   const agregarImagen = (srcImagen, altImagen)=>{
     containerImage.classList.toggle('moveContainer');
@@ -77,10 +27,6 @@ imagenes.forEach(imagen => {
     copy.innerHTML = altImagen;
   };
 
-  cerrarModal.addEventListener('click', ()=>{
-    containerImage.classList.toggle('moveContainer');
-    imgClickeada.classList.toggle('imgTransition');
-  });
 
 
   let sector = localStorage.getItem("Mosaico")
@@ -163,20 +109,134 @@ async function traerImagenes(){
 
 
 
-let imagenesGaleria = document.getElementById("imagenesGaleria")
+let ingresarImagenes = document.getElementById("ingresarImagenes");
 
   
   async function mostrarImagenes() {
-const imagenes = await traerImagenes();
+const fotos = await traerImagenes();
 
-    imagenes.forEach(element => {
-        imagenesGaleria.innerHTML += `
-        <img class="imagenGaleriaInfo" loading="lazy" src="imagenes/mosaicos/${element.ruta}" alt="" data-img-mostar="${element.id}">
+    fotos.forEach(element => {
+        ingresarImagenes.innerHTML += `
+       <img  src="imagenes/mosaicos/${element.ruta}" alt="foto" id="foto${element.id}" class="img">
+        
         `;
 
         
     });
 
-  }
+  
+    const idImagen = document.querySelectorAll('[id^="foto"]')
 
-  mostrarImagenes();
+    console.log(idImagen);
+    const imagenes = document.querySelectorAll(".img");
+    
+    console.log(imagenes)
+    
+    
+    
+    
+      
+    
+    
+      const containerImage = document.querySelector(".containerImg");
+    
+      const imgClickeada = document.querySelector('.imgShow');
+    
+      const copy = document.querySelector('.copy');
+    
+      const cerrarModal = document.querySelector('.bx.bx-x');
+    
+      idImagen.forEach(imagen => {
+        imagen.addEventListener("click", ()=>{
+          
+          localStorage.setItem("idImg", imagen.id);
+    
+          agregarImagen(imagen.getAttribute('src'), imagen.getAttribute('alt'));
+        })
+    
+      })
+    
+      const agregarImagen = (srcImagen, altImagen,)=>{
+    
+      
+        containerImage.classList.toggle('moveContainer');
+        imgClickeada.classList.toggle('imgTransition');
+        imgClickeada.src = srcImagen;
+        
+      };
+    
+      const agregarImagen2 = (srcImagen, altImagen, )=>{
+        imgClickeada.src = srcImagen;
+      
+      };
+
+      cerrarModal.addEventListener('click', () => {
+        containerImage.classList.toggle('moveContainer');
+        imgClickeada.classList.toggle('imgTransition');
+      });
+      
+     
+      
+     
+    
+      const botonAtras = document.querySelector("#buttonAtras");
+      const botonAdelante = document.querySelector("#buttonAdelante");
+    
+    
+      botonAdelante.addEventListener("click", () => {
+        const fotoActualId = localStorage.getItem("idImg");
+        const imagenActual = document.getElementById(fotoActualId);
+        const siguienteImagen = imagenActual.nextElementSibling;
+      
+        if (siguienteImagen) {
+          const srcSiguienteImagen = siguienteImagen.getAttribute('src');
+          const altSiguienteImagen = siguienteImagen.getAttribute('alt');
+      
+          if(srcSiguienteImagen && altSiguienteImagen){
+      
+            localStorage.setItem("idImg", siguienteImagen.id);
+            agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
+          }
+    
+    
+        }else{
+          const imagenes = document.querySelectorAll(".img");
+    
+          const srcImagenPrincipio = imagenes[0].getAttribute("src");
+          
+          localStorage.setItem("idImg", imagenes[0].id);
+          agregarImagen2(srcImagenPrincipio);
+          
+        }
+      });
+    
+    botonAtras.addEventListener("click", () => {
+        const fotoActualId = localStorage.getItem("idImg");
+        const imagenActual = document.getElementById(fotoActualId);
+        const siguienteImagen = imagenActual.previousElementSibling;
+      
+        if (siguienteImagen) {
+          const srcSiguienteImagen = siguienteImagen.getAttribute('src');
+          const altSiguienteImagen = siguienteImagen.getAttribute('alt');
+    
+          if(srcSiguienteImagen && altSiguienteImagen){
+      
+          localStorage.setItem("idImg", siguienteImagen.id);
+          agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
+        }
+    
+      }else{
+        const imagenes = document.querySelectorAll(".img");
+    
+        const srcImagenPrincipio = imagenes[imagenes.length-1].getAttribute("src");
+        
+        localStorage.setItem("idImg", imagenes[imagenes.length-1].id);
+        agregarImagen2(srcImagenPrincipio);
+        
+      }
+      });
+      
+      
+      }
+      
+      mostrarImagenes();

@@ -34,29 +34,10 @@
 </div>
 
 
-  <div id="miModal" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content bg-dark">
-        <div class="modal-header bg-dark">
-          <h5 class="modal-title text-white">Suscribite</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-white">
-          <p>Para recibir las últimas ofertas y novedades</p>
-          <input type="email" id="inputEmail" placeholder="Email" class="form-control m-auto"
-            aria-describedby="passwordHelpBlock" />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" id="btnEnviar">
-            Enviar
-          </button>
-          <button type="button" class="btn btn-light" id="btnNoGracias">
-            No Gracias
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
+
+
 
   <nav class="navbar navbar-expand-lg navbar-dark colorNav fixed-top">
     <div class="container-fluid logo">
@@ -113,6 +94,21 @@
             <a class="nav-link" href="contacto.html">Contacto</a>
           </li>
 
+          <li class="nav-item d-lg-none mt-3">
+           
+          <a class="navbar-brand me-2 " target="_blank" href="https://www.instagram.com/baldosas_lavirgen_srl/">
+            <img src="imagenes/instagram (1).png" alt="" width="23" height="23"
+              class="d-inline-block align-text-top " style="margin-left: 25px" />
+          </a>
+
+          <a class="navbar-brand  " target="_blank" href="https://www.facebook.com/BALDOSASLAVIRGEN">
+            <img src="imagenes/FB.png" alt="" width="23" height="23"
+              class="d-inline-block align-text-top " />
+          </a>
+          </li>
+
+
+
           <a class="navbar-brand  d-none d-lg-block" target="_blank" href="https://www.instagram.com/baldosas_lavirgen_srl/">
             <img src="imagenes/instagram (1).png" alt="" width="23" height="23"
               class="d-inline-block align-text-top m d-none d-lg-block" style="margin-left: 25px" />
@@ -157,14 +153,14 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="imagenes/portada.jpg" class="d-block   imagen" alt="..." />
+          <img onclick="redirigirALisas()" src="imagenes/portada.jpg" class="d-block   imagen" alt="..." />
           <div class="carousel-caption d-none d-md-block">
-            <h3 class="mb-3">Lisas</h3>
+            <h5 class="mb-5">Lisas</h5>
            
           </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenes/portada2(1)desenfoque.jpg" class="d-block  imagen" alt="..." />
+          <img onclick="redirigirAMosaicos()" src="imagenes/portada2(1)desenfoque.jpg" class="d-block  imagen" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5 class="mb-5">Mosaicos</h5>
            

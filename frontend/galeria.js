@@ -148,6 +148,7 @@ console.log(imagenes)
 
       const srcImagenPrincipio = imagenes[0].getAttribute("src");
       
+      localStorage.setItem("idImg", imagenes[0].id);
       agregarImagen2(srcImagenPrincipio);
       
     }
@@ -168,6 +169,14 @@ botonAtras.addEventListener("click", () => {
       agregarImagen2(srcSiguienteImagen, altSiguienteImagen);
     }
 
+  }else{
+    const imagenes = document.querySelectorAll(".img");
+
+    const srcImagenPrincipio = imagenes[imagenes.length-1].getAttribute("src");
+    
+    localStorage.setItem("idImg", imagenes[imagenes.length-1].id);
+    agregarImagen2(srcImagenPrincipio);
+    
   }
   });
   

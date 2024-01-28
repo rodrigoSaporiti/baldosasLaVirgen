@@ -20,3 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+function redirigirALisas() {
+    window.location.href = 'lisas.html';
+    
+  }
+
+
+  function redirigirAMosaicos() {
+    window.location.href = 'mosaicos.html';
+    
+  }

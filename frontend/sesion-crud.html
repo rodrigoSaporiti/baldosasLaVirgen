@@ -26,16 +26,19 @@
 
 
 <main class="container widthCrud p-4">
-    <form class="border">
+    <form class="border needs-validation" novalidate>
+
         <div class="form-group m-3">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
-          
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" required>
+         <div class="invalid-feedback">Ingrese un usuario</div> 
         </div>
         <div class="form-group m-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          <div class="invalid-feedback">Ingrese una contraseña</div> 
         </div>
+        
         <div class="d-flex justify-content-end p-2">
-        <button type="submit" class=" text-center   btn btn-light"> <strong>INGRESAR</strong></button>
+        <button id="botonEnviar" type="submit" class=" text-center   btn btn-light"> <strong>INGRESAR</strong></button>
     </div>
     </form>
     </main>
@@ -46,7 +49,7 @@
 
 
     <script src="../js/bootstrap.min.js"></script>
-    
+    <script src="sesionCrud.js"></script>
 </body>
 
 
