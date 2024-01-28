@@ -9,13 +9,23 @@ const jwt = require("jsonwebtoken");
 const secretKey = "baldosaslv49122024"
 
 
+// const pool = mariadb.createPool({
+//   host: process.env.DB_HOST || "localhost",
+//   user: process.env.DB_USER || "root",
+//   password: process.env.DB_PASSWORD || "51195765",
+//   database: process.env.DB_NAME || "baldosas",
+//   connectionLimit: 5,
+// });
+
+
 const pool = mariadb.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "51195765",
-  database: process.env.DB_NAME || "baldosas",
+  host: "localhost",
+  user: "baldosas_root",
+  password:  "T{j(eNz-,d*Y",
+  database: "baldosas_baldosas",
   connectionLimit: 5,
 });
+
 
 const app = express();
 const port = 3000;
