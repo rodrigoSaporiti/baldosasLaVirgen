@@ -36,7 +36,7 @@ botonEnviar.addEventListener("click", ()=>{
     
     console.log(username, password)
 
-    fetch('http://localhost:3000/login', {
+    fetch('http://baldosaslv.uy/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

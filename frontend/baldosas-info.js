@@ -34,7 +34,7 @@ imagenes.forEach(imagen => {
 
   async function bdMosaicos(){
     try {
-      const response = await fetch(`http://localhost:3000/mosaicosDB/${sector}`);
+      const response = await fetch(`http://baldosaslv.uy/mosaicosDB/${sector}`);
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los datos');
       }
@@ -94,7 +94,7 @@ mostrarCards();
 async function traerImagenes(){
 
   try {
-      const response = await fetch(`http://localhost:3000/mosaicosImagenes/${sector}`);
+      const response = await fetch(`http://baldosaslv.uy/mosaicosImagenes/${sector}`);
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los datos');
       }

@@ -11,7 +11,7 @@ let modal = document.getElementById("modalMosaicoInfo");
 
  async function bdMosaicos(){
     try {
-      const response = await fetch(`http://localhost:3000/mosaicosDB/${sector}`);
+      const response = await fetch(`http://baldosaslv.uy/mosaicosDB/${sector}`);
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los datos');
       }
@@ -117,7 +117,7 @@ if(imagen.files.length ==0){
 
    }
 
-    return fetch(`http://localhost:3000/mosaicos/${sector}`, {
+    return fetch(`http://baldosaslv.uy/mosaicos/${sector}`, {
     method: 'PUT',
     headers: {
        'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ async function enviarArchivo(imagen) {
     console.log(formData)
 
     try {
-        const response = await fetch(`http://localhost:3000/upload/mosaicos`, {
+        const response = await fetch(`http://baldosaslv.uy/upload/mosaicos`, {
             method: 'POST',
             body: formData,
         });
@@ -164,7 +164,7 @@ async function enviarArchivo(imagen) {
 
 function eliminarArchivo(ruta){
 
-    return fetch(`http://localhost:3000/${ruta}`, {
+    return fetch(`http://baldosaslv.uy/${ruta}`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -207,7 +207,7 @@ function guardarNombre(imagen){
 
  
 
-    return fetch(`http://localhost:3000/mosaicosImagenes/${sector}`, {
+    return fetch(`http://baldosaslv.uy/mosaicosImagenes/${sector}`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',
@@ -231,7 +231,7 @@ function guardarNombre(imagen){
 async function traerImagenes(){
 
     try {
-        const response = await fetch(`http://localhost:3000/mosaicosImagenes/${sector}`);
+        const response = await fetch(`http://baldosaslv.uy/mosaicosImagenes/${sector}`);
         if (!response.ok) {
           throw new Error('Hubo un problema al obtener los datos');
         }
@@ -290,7 +290,7 @@ eliminar.forEach(boton => {
 
 
      function eliminarDB(id){
-    return fetch(`http://localhost:3000/eliminarImagen/mosaicos/${id}`,{
+    return fetch(`http://baldosaslv.uy/eliminarImagen/mosaicos/${id}`,{
         method: 'DELETE',
      })
          .then(response => response.json())

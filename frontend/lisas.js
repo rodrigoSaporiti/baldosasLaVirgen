@@ -61,7 +61,7 @@ function redirigirAmarillas() {
   async function traerImagenes(){
 
     try {
-        const response = await fetch(`http://localhost:3000/${sector}`);
+        const response = await fetch(`http://baldosaslv.uy/${sector}`);
         if (!response.ok) {
           throw new Error('Hubo un problema al obtener los datos');
         }
