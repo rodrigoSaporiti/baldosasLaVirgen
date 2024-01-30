@@ -69,7 +69,7 @@ app.post("/upload/mosaicos", upload.single("file"), async(req,res) =>{
 })
 
 
-app.get("/", (req, res) => {
+app.get("/a", (req, res) => {
     res.send("<h1>Bienvenid@ al servidor</h1>");
   });
 
