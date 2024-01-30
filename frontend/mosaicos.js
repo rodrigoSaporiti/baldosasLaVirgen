@@ -37,7 +37,7 @@
 
      async function bdMosaicos(){
         try {
-          const response = await fetch("http://baldosaslv.uy/mosaicos");
+          const response = await fetch("https://baldosaslv.uy/mosaicos");
           if (!response.ok) {
             throw new Error('Hubo un problema al obtener los datos');
           }

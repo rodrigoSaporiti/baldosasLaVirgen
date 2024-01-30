@@ -45,7 +45,7 @@ function crudCorreo() {
 
       mostrarModal();
       
-      fetch('http://baldosaslv.uy/enviarCorreo', {
+      fetch('https://baldosaslv.uy/enviarCorreo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -6,7 +6,7 @@
 
 async function bdCorreos(){
     try {
-      const response = await fetch("http://baldosaslv.uy/correos");
+      const response = await fetch("https://baldosaslv.uy/correos");
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los datos');
       }
@@ -91,7 +91,7 @@ botonEliminar.forEach(boton => {
 
   console.log(correoNuevo);
 
-   return fetch('http://baldosaslv.uy/enviarCorreo', {
+   return fetch('https://baldosaslv.uy/enviarCorreo', {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ botonEliminar.forEach(boton => {
 
  function eliminar(id){
 
-  return fetch(`http://baldosaslv.uy/eliminarCorreo/${id}`, {
+  return fetch(`https://baldosaslv.uy/eliminarCorreo/${id}`, {
     method: 'DELETE',
  })
      .then(response => response.json())

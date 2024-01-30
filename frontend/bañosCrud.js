@@ -20,7 +20,7 @@ async function enviarArchivo(elemento) {
     console.log(formData)
 
     try {
-        const response = await fetch(`http://baldosaslv.uy/upload/${sector}`, {
+        const response = await fetch(`https://baldosaslv.uy/upload/${sector}`, {
             method: 'POST',
             body: formData,
         });
@@ -44,7 +44,7 @@ async function enviarArchivo(elemento) {
 
     let nombre = imagen.value.split("\\").pop(); 
 
-    return fetch(`http://baldosaslv.uy/${sector}`, {
+    return fetch(`https://baldosaslv.uy/${sector}`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ botonEnviar.addEventListener("click", (event) => {
 async function traerImagenes(){
 
     try {
-        const response = await fetch(`http://baldosaslv.uy/${sector}`);
+        const response = await fetch(`https://baldosaslv.uy/${sector}`);
         if (!response.ok) {
           throw new Error('Hubo un problema al obtener los datos');
         }
@@ -143,7 +143,7 @@ eliminar.forEach(boton => {
 
 function eliminarArchivo(ruta){
 
-    return fetch(`http://baldosaslv.uy/${ruta}/${sector}`, {
+    return fetch(`https://baldosaslv.uy/${ruta}/${sector}`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -165,7 +165,7 @@ function eliminarArchivo(ruta){
 
 
      function eliminarDB(id){
-    return fetch(`http://baldosaslv.uy/eliminarImagen/${sector}/${id}`,{
+    return fetch(`https://baldosaslv.uy/eliminarImagen/${sector}/${id}`,{
         method: 'DELETE',
      })
          .then(response => response.json())

@@ -12,7 +12,7 @@ async function enviarArchivo(elemento) {
     console.log(formData)
 
     try {
-        const response = await fetch(`http://baldosaslv.uy/upload/${tipoBaldosa}`, {
+        const response = await fetch(`https://baldosaslv.uy/upload/${tipoBaldosa}`, {
             method: 'POST',
             body: formData,
         });
@@ -67,7 +67,7 @@ enviar.addEventListener("click", async(event)=>{
     peso: d
    }
 
-    return fetch(`http://baldosaslv.uy/mosaicos`, {
+    return fetch(`https://baldosaslv.uy/mosaicos`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ let tarjetasContainer = document.getElementById('tarjetasC');
 
 async function bdMosaicos(){
     try {
-      const response = await fetch("http://baldosaslv.uy/mosaicosDB");
+      const response = await fetch("https://baldosaslv.uy/mosaicosDB");
       if (!response.ok) {
         throw new Error('Hubo un problema al obtener los datos');
       }

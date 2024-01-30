@@ -2,7 +2,7 @@
 const token = localStorage.getItem('token');
 
 // Haciendo una solicitud a la ruta protegida /crud con el token en los encabezados
-fetch('http://baldosaslv.uy/crud', {
+fetch('https://baldosaslv.uy/crud', {
   method: 'GET',
   headers: {
     'Authorization': `${token}`,
