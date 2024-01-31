@@ -37,7 +37,7 @@ app.use(cors());
 const carpetaDestino = (req, file, cb) => {
   // Obtiene el destino desde el cuerpo de la solicitud (req.body)
   const destination = req.params.destination;
-  const rutaCompleta = `imagenes/${destination}`
+  const rutaCompleta = `/home/baldosas/nodeapp/${destination}`
   cb(null, rutaCompleta);
 };
 
