@@ -58,13 +58,13 @@ function redirigirAmarillas() {
 
 
 
-function enviarArchivo(elemento) {
+async function enviarArchivo(elemento) {
     const formData = new FormData();
     formData.append('file', elemento.files[0]); // elemento es un input de tipo file
     console.log(formData)
 
     try {
-        const response = fetch(`https://baldosaslv.uy/upload/${sector}`, {
+        const response = await fetch(`https://baldosaslv.uy/upload/${sector}`, {
             method: 'POST',
             body: formData,
         });
@@ -73,7 +73,7 @@ function enviarArchivo(elemento) {
             throw new Error(`Error en la solicitud: ${response.statusText}`);
         }
 
-        const data =  response.json();
+        const data = await response.json();
         console.log('Respuesta exitosa:', data);
         return data;
     } catch (error) {
