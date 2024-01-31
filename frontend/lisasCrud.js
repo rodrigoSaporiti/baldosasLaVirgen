@@ -60,8 +60,10 @@ function redirigirAmarillas() {
 
 async function enviarArchivo(elemento) {
     const formData = new FormData();
+    console.log(elemento.files[0])
     formData.append('file', elemento.files[0]); // elemento es un input de tipo file
     console.log(formData)
+
 
     try {
         const response = await fetch(`https://baldosaslv.uy/upload/${sector}`, {
