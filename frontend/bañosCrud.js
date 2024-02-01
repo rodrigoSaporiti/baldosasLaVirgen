@@ -61,17 +61,17 @@ async function enviarArchivo(elemento) {
  
 }
 
-botonEnviar.addEventListener("click", (event) => {
-    // Evitar que el formulario se envíe automáticamente y recargue la página
+botonEnviar.addEventListener("click", async (event) => {
     event.preventDefault();
 
     const imagen = document.getElementById("imagenBaño");
-    
-    guardarNombre(imagen);
-    enviarArchivo(imagen);
-    
-});
 
+    try {
+        await Promise.all([guardarNombre(imagen), enviarArchivo(imagen)]);
+    } catch (error) {
+        console.error('Error en el evento de envío:', error);
+    }
+});
 
 
 
