@@ -75,16 +75,22 @@ let imagen = document.getElementById("imagenMosaico");
 let nombre = imagen.value.split("\\").pop();
  
 
-if(imagen.files.length ==0){
+try {
+    if (imagen.files.length == 0) {
+        // Actualizar sin subir nueva imagen
+         actualizar(imagenActualData, titulo, tamaño, metro, peso);
+    } else {
+        // Eliminar archivo anterior, subir nuevo archivo y luego actualizar
+        eliminarArchivo(imagenActualData);
+         enviarArchivo(imagen);
+         actualizar(nombre, titulo, tamaño, metro, peso);
+    }
 
-    actualizar(imagenActualData, titulo , tamaño, metro , peso)
-   
-}else{
-    eliminarArchivo(imagenActualData);
-    enviarArchivo(imagen);
-    actualizar(nombre, titulo , tamaño, metro , peso)
+    // Operaciones completadas correctamente, recargar la página
+    location.reload();
+} catch (error) {
+    console.error('Error en el evento de actualización:', error);
 }
-
     
  
 })
@@ -190,10 +196,18 @@ botonImagenes.addEventListener("click", ()=>{
 
     let imagen = document.getElementById("imagenesMosaicos");
 
+// Guardar el nombre de la imagen
+  guardarNombre(imagen);
 
-    enviarArchivo(imagen);
-    guardarNombre(imagen);
-
+  // Enviar la imagen
+  try {
+       enviarArchivo(imagen);
+      // Recargar la página después de que la carga sea exitosa
+      window.location.reload();
+  } catch (error) {
+      console.error("Error al enviar la imagen:", error);
+      // Manejar el error de alguna manera si es necesario
+  }
 
 })
 
@@ -279,7 +293,7 @@ eliminar.forEach(boton => {
        console.log(ruta, sector)
          eliminarDB(eliminarID);
         eliminarArchivo(ruta);
-       
+        location.reload();
     
     })
     

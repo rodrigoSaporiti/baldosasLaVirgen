@@ -42,11 +42,18 @@ enviar.addEventListener("click", async(event)=>{
   const  cantidadM2 = document.getElementById("cantidadM2").value
   const  pesoBaldosa = document.getElementById("pesoBaldosa").value
  
+  try {
+    // Primero, enviar el archivo
+    await enviarArchivo(imagen);
 
-// console.log( nombreImagen, tamañoBaldosa , cantidadM2 , pesoBaldosa )
+    // Luego, guardar el nombre y otros datos
+    await guardarNombre(imagen, nombreImagen, tamañoBaldosa, cantidadM2, pesoBaldosa);
 
-  await enviarArchivo(imagen);
-  guardarNombre(imagen, nombreImagen, tamañoBaldosa, cantidadM2, pesoBaldosa);
+    // Ambas operaciones se completaron correctamente, ahora recargamos la página
+    location.reload();
+} catch (error) {
+    console.error('Error en el evento de envío:', error);
+}
 
 })
 

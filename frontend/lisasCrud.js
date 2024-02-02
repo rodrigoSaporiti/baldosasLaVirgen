@@ -114,19 +114,22 @@ const botonEnviar = document.getElementById("enviar");
 
 
 
+botonEnviar.addEventListener("click", async () => {
+  const imagen = document.getElementById("imagenLisas");
 
-botonEnviar.addEventListener("click", (event) => {
-    // Evitar que el formulario se envíe automáticamente y recargue la página
-    event.preventDefault();
+  // Guardar el nombre de la imagen
+  guardarNombre(imagen);
 
-    const imagen = document.getElementById("imagenLisas");
-    
-    guardarNombre(imagen);
-    enviarArchivo(imagen);
-    
+  // Enviar la imagen
+  try {
+      await enviarArchivo(imagen);
+      // Recargar la página después de que la carga sea exitosa
+      window.location.reload();
+  } catch (error) {
+      console.error("Error al enviar la imagen:", error);
+      // Manejar el error de alguna manera si es necesario
+  }
 });
-
-
 
 
 
@@ -196,7 +199,8 @@ eliminar.forEach(boton => {
        console.log(ruta, sector)
          eliminarDB(eliminarID);
         eliminarArchivo(ruta);
-       
+
+     location.reload()
     
     })
     

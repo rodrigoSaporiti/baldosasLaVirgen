@@ -68,6 +68,7 @@ botonEnviar.addEventListener("click", async (event) => {
 
     try {
         await Promise.all([guardarNombre(imagen), enviarArchivo(imagen)]);
+        location.reload();
     } catch (error) {
         console.error('Error en el evento de envío:', error);
     }
@@ -131,6 +132,8 @@ eliminar.forEach(boton => {
        console.log(ruta, sector)
          eliminarDB(eliminarID);
         eliminarArchivo(ruta);
+
+        location.reload()
        
     
     })
