@@ -51,11 +51,13 @@ modal.innerHTML = `
 
 
 <label for="recipient-name" class="col-form-label">Imagen Actual</label>
-<img src="imagenes/mosaicos/${element.img}" data-img="${element.img}" id="imagenActual" width="80">
+<img class="mt-2" src="imagenes/mosaicos/${element.img}" data-img="${element.img}" id="imagenActual" width="80">
 
 <label for="recipient-name" class="col-form-label">Nueva Imagen</label>
-<input type="file" class="form-control" id="imagenMosaico">
+<input type="file" class="form-control mt-3" id="imagenMosaico">
 
+
+<button id="borrarMosaico" class="mt-5 btn btn-danger">Borrar Mosaico</button>
 `
 
     });
@@ -94,6 +96,9 @@ try {
     
  
 })
+
+
+
 
 
 
