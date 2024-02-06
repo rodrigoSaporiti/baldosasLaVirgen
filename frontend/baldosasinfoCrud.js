@@ -197,16 +197,16 @@ let botonImagenes = document.getElementById("enviarImgMosaicos");
 
 
 
-botonImagenes.addEventListener("click", ()=>{
+ botonImagenes.addEventListener("click",async ()=>{
 
     let imagen = document.getElementById("imagenesMosaicos");
 
 // Guardar el nombre de la imagen
-  guardarNombre(imagen);
+ await guardarNombre(imagen);
 
   // Enviar la imagen
   try {
-       enviarArchivo(imagen);
+    await  enviarArchivo(imagen);
       // Recargar la página después de que la carga sea exitosa
       window.location.reload();
   } catch (error) {
