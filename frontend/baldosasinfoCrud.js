@@ -8,6 +8,55 @@ let modal = document.getElementById("modalMosaicoInfo");
  
 
 
+ function eliminarArchivo(ruta){
+
+    return fetch(`https://baldosaslv.uy/${ruta}`, {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => {
+        console.error('Error en la solicitud:', error);
+        return { error: true };
+    });
+}
+
+
+
+     function eliminarDB(id){
+    return fetch(`https://baldosaslv.uy/eliminarImagen/mosaicos/${id}`,{
+        method: 'DELETE',
+     })
+         .then(response => response.json())
+         .then(data => console.log(data))
+         .catch(error => {
+          console.error('Error en la solicitud:', error);
+          return { error: true };
+    
+     })
+}
+
+
+
+
+function eliminarMosaico(id){
+    return fetch(`https://baldosaslv.uy/eliminarImagen/mosaicosPrincipal/${id}`,{
+        method: 'DELETE',
+     })
+         .then(response => response.json())
+         .then(data => console.log(data))
+         .catch(error => {
+          console.error('Error en la solicitud:', error);
+          return { error: true };
+    
+     })
+}
+
 
 
  async function bdMosaicos(){
@@ -65,10 +114,42 @@ modal.innerHTML = `
 <input type="file" class="form-control mt-3" id="imagenMosaico">
 
 
-<button id="borrarMosaico" class="mt-5 btn btn-danger">Borrar Mosaico</button>
+<button id="borrarMosaico" data-id="${element.id}" class="mt-5 btn btn-danger">Borrar Mosaico</button>
+<p>*Borra primero las imgenes para eliminar el mosaico</p>
 `
 
+
+let btnEliminarMosaico = document.getElementById("borrarMosaico");
+
+
+
+    btnEliminarMosaico.addEventListener("click", (event)=>{
+
+        let imagenActual = document.getElementById("imagenActual");
+let imagenActualData = imagenActual.getAttribute("data-img")
+
+
+let idMosaico = btnEliminarMosaico.getAttribute("data-id");
+    
+event.preventDefault();
+        eliminarMosaico(idMosaico);
+        eliminarArchivo(imagenActualData);
+    
+    })
+
+
+
+
     });
+
+
+
+
+
+    
+    
+
+
 
 actualizarInfo.addEventListener("click", ()=>{
 
@@ -102,6 +183,10 @@ try {
 } catch (error) {
     console.error('Error en el evento de actualización:', error);
 }
+
+
+
+
     
  
 })
@@ -181,24 +266,6 @@ async function enviarArchivo(imagen) {
     }
 }
 
-
-function eliminarArchivo(ruta){
-
-    return fetch(`https://baldosaslv.uy/${ruta}`, {
-        method: 'DELETE',
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => {
-        console.error('Error en la solicitud:', error);
-        return { error: true };
-    });
-}
 
 
 
@@ -317,18 +384,6 @@ eliminar.forEach(boton => {
 
 
 
-     function eliminarDB(id){
-    return fetch(`https://baldosaslv.uy/eliminarImagen/mosaicos/${id}`,{
-        method: 'DELETE',
-     })
-         .then(response => response.json())
-         .then(data => console.log(data))
-         .catch(error => {
-          console.error('Error en la solicitud:', error);
-          return { error: true };
-    
-     })
-}
 
 
 mostrarImagenes();
