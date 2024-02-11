@@ -131,9 +131,13 @@ let imagenActualData = imagenActual.getAttribute("data-img")
 
 let idMosaico = btnEliminarMosaico.getAttribute("data-id");
     
-event.preventDefault();
+event.preventDefault()
+
         eliminarMosaico(idMosaico);
-        eliminarArchivo(imagenActualData);
+         eliminarArchivo(imagenActualData);
+        alert("Eliminado Correctamente")
+
+      window.location.href="mosaicosCrud.html"
     
     })
 
