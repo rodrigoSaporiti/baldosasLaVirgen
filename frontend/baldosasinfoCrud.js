@@ -5,6 +5,7 @@ let titulo = document.getElementById("titulo");
 let modal = document.getElementById("modalMosaicoInfo");
  let sector = localStorage.getItem("idMosaico")
  let actualizarInfo = document.getElementById("actualizarInfo");
+ 
 
 
 
@@ -46,12 +47,19 @@ modal.innerHTML = `
 <input type="text" class="form-control" id="metro" value="${element.metro}">
 
 
+
+
 <label for="recipient-name" class="col-form-label">Peso</label>
 <input type="text" class="form-control" id="peso" value="${element.peso}">
 
 
+<label for="recipient-name" class="col-form-label">Posición</label>
+ <input type="number" class="form-control" value="${element.posicion}" >
+
+
 <label for="recipient-name" class="col-form-label">Imagen Actual</label>
 <img class="mt-2" src="imagenes/mosaicos/${element.img}" data-img="${element.img}" id="imagenActual" width="80">
+
 
 <label for="recipient-name" class="col-form-label">Nueva Imagen</label>
 <input type="file" class="form-control mt-3" id="imagenMosaico">
@@ -68,6 +76,7 @@ let titulo = document.getElementById("titulo1").value
 let tamaño = document.getElementById("tamaño").value
 let metro = document.getElementById("metro").value
 let peso = document.getElementById("peso").value
+
 
 let imagenActual = document.getElementById("imagenActual");
 let imagenActualData = imagenActual.getAttribute("data-img")

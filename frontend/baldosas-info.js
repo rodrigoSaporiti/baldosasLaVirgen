@@ -10,6 +10,12 @@ const copy = document.querySelector('.copy');
 
 
 
+let indice = document.getElementById("indice");
+
+
+let numero = localStorage.getItem("indice");
+
+indice.textContent= "#" + numero;
 
 
 
@@ -51,6 +57,7 @@ imagenes.forEach(imagen => {
 let titulo = document.getElementById("titulo")
 let descripcion = document.getElementById("descripcion")
 let imagen = document.getElementById("imagen")
+
 
 
 async function mostrarCards() {

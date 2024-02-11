@@ -30,37 +30,40 @@
     
     */
 
-    let tarjetasContainer = document.getElementById('tarjetasC');
+let tarjetasContainer = document.getElementById("tarjetasC");
 
+//Fetch base de datos
 
-    //Fetch base de datos
+async function bdMosaicos() {
+  try {
+    const response = await fetch("https://baldosaslv.uy/mosaicos");
+    if (!response.ok) {
+      throw new Error("Hubo un problema al obtener los datos");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return []; // Devuelve un array vacío en caso de error
+  }
+}
 
-     async function bdMosaicos(){
-        try {
-          const response = await fetch("https://baldosaslv.uy/mosaicos");
-          if (!response.ok) {
-            throw new Error('Hubo un problema al obtener los datos');
-          }
-          const data = await response.json();
-          return data;
-        } catch (error) {
-          console.error(error);
-          return []; // Devuelve un array vacío en caso de error
-        }
-      };
-      
+async function mostrarCards() {
+  const mosaicos = await bdMosaicos();
 
+  mosaicos.forEach((elemento, indice) => {
 
-
-      async function mostrarCards() {
-        const mosaicos = await bdMosaicos();
     
-        mosaicos.forEach(elemento => {
-            let tarjetaHTML = `
+
+    let tarjetaHTML = `
 
 
-            <div class="cardMosaico" onclick="redirigirABaldosasinfo(${elemento.id})">
+            <div class="cardMosaico" onclick="redirigirABaldosasinfo(${elemento.id}, ${indice+1})">
+            <div class="w-100 d-flex justify-content-end">
+            <div class="posicion"> <p class="indice">${indice+1}</p></div>
+            </div>
             <div class="" style="width: 250px;">
+            
                 <img src="imagenes/mosaicos/${elemento.img}"  alt="" style="height: 250px; width:250px">
 
                 <h5 class=" mt-2 text-center text-white">${elemento.titulo}</h5>
@@ -70,42 +73,32 @@
 
         
             `;
-    
-            tarjetasContainer.innerHTML += tarjetaHTML;
 
-       
 
-            
+
+    tarjetasContainer.innerHTML += tarjetaHTML;
+
+     
     let botones = document.querySelectorAll("#botonMosaicoCrud");
 
-    botones.forEach(element => {
+    botones.forEach((element) => {
+      element.addEventListener("click", () => {
+        let idMosaico = element.getAttribute("data-btn");
 
-        element.addEventListener("click", ()=>{
-
-            let idMosaico = element.getAttribute("data-btn");
-
-            console.log(idMosaico)
-            localStorage.setItem("Mosaico", idMosaico)
-        })
-        
+        console.log(idMosaico);
+        localStorage.setItem("Mosaico", idMosaico);
+      });
     });
-        });
-    }
+  });
+}
 
+function redirigirABaldosasinfo(id, indice) {
+  let idMosaico = id;
 
-    function redirigirABaldosasinfo(id){
+  console.log(idMosaico);
+  localStorage.setItem("indice", indice);
+  localStorage.setItem("Mosaico", idMosaico);
+  window.location.href = "baldosas-info.html";
+}
 
-        let idMosaico =id
-
-        console.log(idMosaico)
-        localStorage.setItem("Mosaico", idMosaico)
-        window.location.href = 'baldosas-info.html';
-
-    }
-    
-    mostrarCards();
-
-
-    
-
-    
+mostrarCards();
