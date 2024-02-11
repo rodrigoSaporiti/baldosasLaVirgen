@@ -84,7 +84,7 @@ function redirigirAmarillas() {
   
     ingresarImagenes.innerHTML += `
     
-    <img src="imagenes/${sector}/${element.nombre}" alt="foto" id="foto${element.id}" class="img">
+    <img src="imagenes/${sector}/${element.nombre}" alt="foto" loading="lazy" id="foto${element.id}" class="img">
              
     `
     

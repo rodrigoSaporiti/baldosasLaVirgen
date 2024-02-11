@@ -65,7 +65,7 @@ function redirigirABanos() {
   
     ingresarImagenes.innerHTML += `
     
-    <img src="imagenes/${sector}/${element.nombre}" alt="foto" id="foto${element.id}" class="img">
+    <img src="imagenes/${sector}/${element.nombre}" loading="lazy" alt="foto" id="foto${element.id}" class="img">
              
     `
     

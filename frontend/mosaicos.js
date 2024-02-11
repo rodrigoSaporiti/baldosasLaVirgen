@@ -64,7 +64,7 @@ async function mostrarCards() {
             </div>
             <div class="" style="width: 250px;">
             
-                <img src="imagenes/mosaicos/${elemento.img}"  alt="" style="height: 250px; width:250px">
+                <img src="imagenes/mosaicos/${elemento.img}" loading="lazy" alt="" style="height: 250px; width:250px">
 
                 <h5 class=" mt-2 text-center text-white">${elemento.titulo}</h5>
             <a href="baldosas-info.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark w-100 p-1 rounded-0 mt-3">Ver Más.. </a>

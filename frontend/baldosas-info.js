@@ -81,7 +81,7 @@ async function mostrarCards() {
      `
 
      imagen.innerHTML = `
-     <img src="imagenes/mosaicos/${elemento.img}" class="imagenBaldosasInfo">
+     <img src="imagenes/mosaicos/${elemento.img}" loading="lazy" class="imagenBaldosasInfo">
      `
      
   });
@@ -124,7 +124,7 @@ const fotos = await traerImagenes();
 
     fotos.forEach(element => {
         ingresarImagenes.innerHTML += `
-       <img  src="imagenes/mosaicos/${element.ruta}" alt="foto" id="foto${element.id}" class="img">
+       <img  src="imagenes/mosaicos/${element.ruta}" alt="foto" loading="lazy" id="foto${element.id}" class="img">
         
         `;
 
