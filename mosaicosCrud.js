@@ -74,7 +74,7 @@ enviar.addEventListener("click", async(event)=>{
     peso: d
    }
 
-    return fetch(`https://baldosaslv.uy/mosaicos`, {
+    return fetch(`https://baldosaslv.uy/mosaicosEnviar`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json',

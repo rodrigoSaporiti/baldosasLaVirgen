@@ -164,7 +164,7 @@ app.put("/mosaicos/:id", async (req, res) => {
   }
 });
 
-app.post("/mosaicos", async (req, res) => {
+app.post("/mosaicosEnviar", async (req, res) => {
   const { titulo, img, tamaño, metro, peso } = req.body.datos;
 
   let conn;
