@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="imagenes/sinTexto.png">
+    <title>Admin-Mosaicos</title>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="crud.css" />
+    <link rel="icon" href="imagenes/sinTexto.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
  
  
 
@@ -63,86 +64,58 @@
 <div class="col-lg-10 col-12 ">
 
     <div class="row text-dark">
-        <div class="col-6 d-flex justify-content-end"><h1 class="text-center text-white mt-4"><span id="titulo"></span></h1></div>
+        <div class="col-6 d-flex justify-content-end"><h1 class="text-center text-white mt-4">Mosaicos</h1></div>
         <div class="col-6 m-0 m-auto d-flex justify-content-center">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cambiar info</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+ Agregar Mosaico</button>
             
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cambiar info</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="modalMosaicoInfo">
-                      <div class="mb-3">
-                     
-                      </div>
-                     
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="actualizarInfo">Enviar</button>
-                  </div>
-                </div>
-              </div>
-            </div></div>
-  
-</div>
-
-
-
-  <div class="tablaScroll">
-
-  <table class="table container w-75 text-white">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Imagenes</th>
-        <th>
-          <div class=" text-center ms-5">
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">+ Agregar Imagen</button>
-            
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar Imagen</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Cliente</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <form>
                       <div class="mb-3">
-        
-                        <input type="file" class="form-control" id="imagenesMosaicos">
+                        <label for="recipient-name" class="col-form-label">Nombre Imagen</label>
+                        <input type="text" class="form-control" id="nombreImagen">
+
+                        <label for="recipient-name" class="col-form-label">Tamaño Baldosa</label>
+                        <input type="text" class="form-control" id="tamañoBaldosa">
+
+                        <label for="recipient-name" class="col-form-label">Cantidad por m2</label>
+                        <input type="text" class="form-control" id="cantidadM2">
+                    
+                        <label for="recipient-name" class="col-form-label">Peso</label>
+                        <input type="text" class="form-control" id="pesoBaldosa">
+
+                    
+                      </div>
+                      <div>
+                        <input type="file" class="form-control" id="imagenMosaico">
                       </div>
                      
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="enviarImgMosaicos">Enviar</button>
+                    <button type="button" class="btn btn-primary" id="enviarMosaico">Enviar</button>
                   </div>
                 </div>
               </div>
             </div></div>
-        
-        </th>
-      </tr>
-    </thead>
-    
-    <tbody id="tbody">
-     
-      
-     
   
-    </tbody>
-  </table>
-
 </div>
 
+
+<main style="margin-top: 100px">
+  <div class="container">
+    <div id="tarjetasC" class="row">
+
+    </div>
+  </div>
+</main>
   
 
  
@@ -152,8 +125,8 @@
 
 
     <script src="../js/bootstrap.min.js"></script>
-    <script src="baldosasinfoCrud.js"></script>
     <script src="crud.js"></script>
+    <script src="mosaicosCrud.js"></script>
     <script src="verificarCrud.js"></script>
     
 </body>

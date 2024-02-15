@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function redirigirALisas() {
-    window.location.href = 'frontend/lisas.html';
+    window.location.href = 'lisas.html';
     
   }
 
 
   function redirigirAMosaicos() {
-    window.location.href = 'frontend/mosaicos.html';
+    window.location.href = 'mosaicos.html';
     
   }

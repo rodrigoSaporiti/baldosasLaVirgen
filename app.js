@@ -33,7 +33,7 @@ app.use(cors());
 const carpetaDestino = (req, file, cb) => {
   // Obtiene el destino desde el cuerpo de la solicitud (req.body)
   const destination = req.params.destination;
-  const rutaCompleta = `../public_html/frontend/imagenes/${destination}`;
+  const rutaCompleta = `../public_html/imagenes/${destination}`;
   cb(null, rutaCompleta);
 };
 
@@ -45,6 +45,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+app.get('/ab', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.post("/upload/:destination?", upload.single("file"), async (req, res) => {
   res.send({ data: "Imagen Cargada" });
@@ -358,7 +362,7 @@ app.delete("/:ruta/:sector", async (req, res) => {
   const rutaArchivo = req.params.ruta;
   const sector = req.params.sector;
 
-  const rutaTotal = `../public_html/frontend/imagenes/${sector}/${rutaArchivo}`;
+  const rutaTotal = `../public_html/imagenes/${sector}/${rutaArchivo}`;
 
   let conn;
 
@@ -381,7 +385,7 @@ app.delete("/:ruta/:sector", async (req, res) => {
 app.delete("/:ruta", async (req, res) => {
   const rutaArchivo = req.params.ruta;
 
-  const rutaTotal = `../public_html/frontend/imagenes/mosaicos/${rutaArchivo}`;
+  const rutaTotal = `../public_html/imagenes/mosaicos/${rutaArchivo}`;
 
   let conn;
 
@@ -400,6 +404,10 @@ app.delete("/:ruta", async (req, res) => {
     res.status(500).json({ message: "Error al eliminar el archivo" });
   }
 });
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baldosas LV-FAQ</title>
+    <title>Baldosas LV-Mosaico</title>
+    <link rel="icon" href="imagenes/sinTexto.png">
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="faq.css" />
-    <link rel="icon" href="imagenes/sinTexto.png">
+    <link rel="stylesheet" href="baldosas-info.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body class="imagenFondo" >
-
 
     <a href="https://api.whatsapp.com/send?phone=59892212234" class="whatsapp-float" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
@@ -35,7 +39,7 @@
         <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
           <ul class="navbar-nav text-center align-items-sm-center align-items-sm-start">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="catalogo.html">Catalogo</a>
@@ -68,7 +72,7 @@
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="faq.html">Preguntas Frecuentes</a>
+              <a class="nav-link" href="faq.html">Preguntas Frecuentes</a>
             </li>
             
             <li class="nav-item">
@@ -108,86 +112,131 @@
   
 
 
-<main class="container" id="contenedorFaq" style="margin-top: 150px;">
+    <main class="mb-5" style="margin-top: 100px;">
+
+<div class=" mt-5">
 
 
 
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <h3>¿Qué es una Baldosa Calcárea?</h3>
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+<div class="m-0 p-0">
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button text-w collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <h3>Fabricación</h3>
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+  <div class="row d-flex justify-content-center align-items-start">
+
+    <div class="col-lg-4 d-flex justify-content-center align-items-center" id="imagen">
 
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <h3>¿Por qué son artesanales?</h3>
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+</div>
+
+<div class="col-lg-4  text-center d-flex flex-wrap  justify-content-center mt-lg-0 mt-3  ">
+
+ <div class="text-center m-lg-0 m-lg-auto m-5">
+  <h2 class="text-white m-0 p-0 text-center" id="titulo"></h2>
+   <h3 class="text-white mt-0 pt-0 mb-3" id="indice"></h3>
+  </div>
+
+
+   <div class="cardBaldosasInfo m-0">
+
+  
+
+
+  <ul class="text-white text-start m-auto" id="descripcion">
+   
+  </ul>
+
+  
+</div>
+
+<div class="cardBaldosasInfo container">
+
+  <p class="text-white fontInfo" style="font-size:18px;">Los mosaicos calcáreos se elaboran artesanalmente de forma manual.
+    Las diferencias de tonos de la baldosa, los bordes irregulares y las microfisuras son aspectos totalmente inherentes a su naturaleza.
+    Precisamente, estas características aportan un carácter distintivo y hacen que sean una elección cautivadora para la creación de ambientes diseñados con encanto.</p>
+    <p class="text-white">Por mas informacíon: <a href="faq.html" class="ms-1 text-white">Preguntas Frecuentes</a></p>
+
+
+</div>
+
+<p class="text-white mt-3"> * Nuestro proceso de fabricación se adapta a la demanda y la cola de pedidos, consulte stock. <p class="text-white mb-0 mt-1">*Los colores pueden ser a elección dentro de nuestra paleta en la fabricación de la baldosa.</p>
+
+
+
+</div>
+
+</div>
+
+  </div>
+
+
+</div>
+</div>
+
+
+
+<div class="galeria p-0 w-100">
+
+  <h1 class=" mb-4 text-white border-bottom w-100 " style="width: 100%;" > Imagenes </h1>
+  
+    
+  <section class="">
+          
+          
+
+
+    <div id="ingresarImagenes"></div>
+      <div class="containerImg">
+
+        <button class="btn text-white " id="buttonAtras">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+          </svg>
+        </button>
+        <img src="imagenes/bathrom5.jpg" alt="" class="imgShow">
+        
+        <i class='bx bx-x'></i>
+
+        <button class="btn text-white" id="buttonAdelante">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+          </svg>
+        </button>
+
       </div>
+  </section>
+
+
+<div class="containerImg">
+  <img src="imagenes/bathrom5.jpg" alt="" class="imgShow">
+  <i class='bx bx-x'></i>
+  <p class="copy">asdasdasdasdad</p>
+</div>
+
+</div>
+
+
 
 
   
 
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button text-w collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              <h3>¿Cómo es su instalación?</h3>
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-             <h3>¿Y su mantenimiento?</h3>
-            </button>
-          </h2>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-      </div>
+ 
+</div>
+  </div>
+</div>
+  </div>
 
-
-
+   
+  
     </main>
+
+
+
+
+
+
+
+
 
 
 
@@ -296,7 +345,6 @@
 
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <script src="mosaicos.js"></script>
   <script src="baldosas-info.js"></script>
   
 </html>

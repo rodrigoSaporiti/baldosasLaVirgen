@@ -846,7 +846,7 @@ margin-top: 90px;
 
 .backgroundMain {
   height: 100%;
-  background-image: url('/frontend/imagenes/fondomain.jpg');
+  background-image: url('/imagenes/fondomain.jpg');
   background-size: cover;
      /* Para evitar que el contenido sobresalga del fondo */
   display: flex;

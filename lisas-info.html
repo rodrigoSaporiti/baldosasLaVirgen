@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin-Galeria</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="crud.css" />
     <link rel="icon" href="imagenes/sinTexto.png">
- 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
  
 
 </head>
@@ -59,89 +59,70 @@
 
 
 
-<div class="col-lg-10 col-12">
+<div class="col-10 ">
 
-  <h1 class="text-center mt-4">Galeria</h1>
+    <div class="row text-dark">
+        <div class="col-6 d-flex justify-content-end"><h1 class="text-center text-white mt-4 text-uppercase"><span id="tituloLisas"></span></h1></div>
+        <div class="col-6 m-0 m-auto d-flex justify-content-center">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+ Agregar Imagen</button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+
+                        <input type="file" class="form-control" id="imagenLisas">
+                      </div>
+                     
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+  
+</div>
 
 
+  <div class="tablaScroll">
 
-  <main class="m">
-
-
-
-    <table class="text-white w-75 m-auto mt-5 rounded-2">
-
-      <tr class="tablaCard">
-        <td class="align-items-center d-flex bg-dark" onclick="redirigirABanos()">
-          <img src="imagenes/secciones/baños.jpg" alt="portada2" style="width: 100px; height: 100px;">
-          <h4 class="m-auto">BAÑOS</h4>
-          <h4 class="me-3">></h4>
-        </td>
+  <table class="table container w-75 text-white">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imagen</th>
       </tr>
-      
+    </thead>
+    <tbody id="agregarTabla">
+
+    
+  
+    </tbody>
+  </table>
+
+</div>
+
+  
+
  
-    
-
-      <tr class="tablaCard" >
-        <td class="align-items-center d-flex bg-dark" onclick="redirigirACocinas()">
-           <img src="imagenes/secciones/cocinas.jpg" alt="portada2" style="width: 100px; height: 100px;" >
-          <h4 class=" m-auto">COCINAS</h4>
-         <h4 class="me-3">></h4>       
-      </td> 
-    </tr>
-
-
-      <tr class="tablaCard" >
-        <td class="align-items-center d-flex bg-dark" onclick="redirigirALocalesComerciales()">
-          <img src="imagenes/secciones/locales.jpg" alt="portada2" style="width: 100px; height: 100px;" >
-              <h4 class=" m-auto">LOCALES COMERCIALES</h4>
-              <h4 class="me-3">></h4>
-      </td>
-     </tr>
-
-
-
-      <tr class="tablaCard" >
-        <td class="align-items-center d-flex bg-dark" onclick="redirigirAExteriores()">
-          <img src="imagenes/secciones/exteriores.jpg" alt="portada2" style="width: 100px; height: 100px;" >
-              <h4 class=" m-auto">EXTERIORES</h4>
-              <h4 class="me-3">></h4>
-        </td>
-      </tr>
-
-
-
-
-
-      <tr class="tablaCard" >
-        <td class="align-items-center d-flex bg-dark"onclick="redirigirAInteriores()"> 
-          <img src="imagenes/secciones/interiores.jpg" alt="portada2" style="width: 100px; height: 100px;" >
-              <h4 class=" m-auto">INTERIORES</h4>
-              <h4 class="me-3">></h4>   
-
-        </td>
-      </tr>
-
-
-
-
-    
-    </table>
-
-
-
-
-    </main>
-
-
 
 </div>
 
-</div>
+
 
     <script src="../js/bootstrap.min.js"></script>
-    <script src="crud.js"></script>
+    <script src="lisasCrud.js"></script>
     <script src="verificarCrud.js"></script>
+    <script src="crud.js"></script>
     
 </body>
 
