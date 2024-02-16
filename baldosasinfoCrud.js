@@ -137,7 +137,7 @@ event.preventDefault()
          eliminarArchivo(imagenActualData);
         alert("Eliminado Correctamente")
 
-      window.location.href="mosaicosCrud.html"
+      window.location.href="mosaicosCrud"
     
     })
 

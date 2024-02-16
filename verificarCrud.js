@@ -16,7 +16,7 @@ fetch('https://baldosaslv.uy/crud', {
         
         alert("Acceso Denegado");
     
-          window.location.href = "index.html"; 
+          window.location.href = "index"; 
       } else {
         // Maneja otros errores de acuerdo a tus necesidades
         throw new Error('Error en la solicitud');
@@ -42,6 +42,6 @@ fetch('https://baldosaslv.uy/crud', {
 
    localStorage.removeItem("token");
 
-  window.location.href = "index.html"
+  window.location.href = "index"
 
   })

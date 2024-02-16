@@ -123,7 +123,7 @@ async function bdMosaicos(){
                 <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
                     <img src="imagenes/mosaicos/${elemento.img}" class="card-img-top" alt="" style="height: 150px;">
                     <h5 class="card-title text-center text-dark">${elemento.titulo}</h5>
-                <a href="baldosas-infoCrud.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
+                <a href="baldosas-infoCrud" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
                 </div>
             </div>
         `;

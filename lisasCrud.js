@@ -1,45 +1,45 @@
 function redirigirAmarillas() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "amarillas");
 }
 
 function redirigirAzules() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "azules");
 }
 
 function redirigirBlancas() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "blancos");
 }
 
 function redirigirCueros() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "Cueros");
 }
 
 function redirigirCremas() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "cremas");
 }
 
 function redirigirGrises() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "grises");
 }
 
 function redirigirNegros() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "negros");
 }
 
 function redirigirRojos() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "rojos");
 }
 
 function redirigirVerdes() {
-  window.location.href = "lisas-info.html";
+  window.location.href = "lisas-info";
   localStorage.setItem("Lisas", "verdes");
 }
 

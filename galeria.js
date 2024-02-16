@@ -1,30 +1,30 @@
 function redirigirABanos() {
-    console.log("Redirigiendo a 'baños.html'");
-    window.location.href = 'galeria-info.html';
+    console.log("Redirigiendo a 'baños'");
+    window.location.href = 'galeria-info';
     localStorage.setItem("Galeria", "baños")
   }
 
   function redirigirACocinas() {
-    console.log("Redirigiendo a 'Cocinas.html'");
-    window.location.href = 'galeria-info.html';
+    console.log("Redirigiendo a 'Cocinas'");
+    window.location.href = 'galeria-info';
     localStorage.setItem("Galeria", "cocinas")
   }
 
   function redirigirALocalesComerciales() {
-    console.log("Redirigiendo a 'localesComerciales.html'");
-    window.location.href = 'galeria-info.html';
+    console.log("Redirigiendo a 'localesComerciales'");
+    window.location.href = 'galeria-info';
     localStorage.setItem("Galeria", "locales")
   }
 
   function redirigirAExteriores() {
-    console.log("Redirigiendo a 'exteriores.html'");
-    window.location.href = 'galeria-info.html';
+    console.log("Redirigiendo a 'exteriores'");
+    window.location.href = 'galeria-info';
     localStorage.setItem("Galeria", "exteriores")
   }
   
   function redirigirAInteriores() {
-    console.log("Redirigiendo a 'interiores.html'");
-    window.location.href = 'galeria-info.html';
+    console.log("Redirigiendo a 'interiores'");
+    window.location.href = 'galeria-info';
     localStorage.setItem("Galeria", "interiores")
   }
 

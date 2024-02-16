@@ -47,7 +47,7 @@ botonEnviar.addEventListener("click", ()=>{
         console.log('Token de sesión:', data.token);
         if(data.token){
             localStorage.setItem("token", data.token)
-            window.location.href ="index-crud.html"
+            window.location.href ="index-crud"
         }else{
           alert("Contraseña incorrecta")
         }

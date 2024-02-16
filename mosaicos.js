@@ -19,7 +19,7 @@
             <div class="card m-2 border-2 border-secondary rounded-bottom" style="width: 150px;">
                 <img src="${elemento.imagen}" class="card-img-top" alt="" style="height: 150px;">
                 <h5 class="card-title text-center">${elemento.titulo}</h5>
-                <a href="baldosas-info.html" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
+                <a href="baldosas-info" class="btn btn-dark text-center p-1 rounded-0">Ver Más.. </a>
             </div>
         </div>
             `;
@@ -67,7 +67,7 @@ async function mostrarCards() {
                 <img src="imagenes/mosaicos/${elemento.img}" loading="lazy" alt="" style="height: 250px; width:250px">
 
                 <h5 class=" mt-2 text-center text-white">${elemento.titulo}</h5>
-            <a href="baldosas-info.html" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark w-100 p-1 rounded-0 mt-3">Ver Más.. </a>
+            <a href="baldosas-info" id="botonMosaicoCrud" data-btn="${elemento.id}" class="btn btn-dark w-100 p-1 rounded-0 mt-3">Ver Más.. </a>
             </div>
         </div>
 
@@ -98,7 +98,7 @@ function redirigirABaldosasinfo(id, indice) {
   console.log(idMosaico);
   localStorage.setItem("indice", indice);
   localStorage.setItem("Mosaico", idMosaico);
-  window.location.href = "baldosas-info.html";
+  window.location.href = "baldosas-info";
 }
 
 mostrarCards();
