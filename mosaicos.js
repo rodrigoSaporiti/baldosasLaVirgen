@@ -36,7 +36,7 @@ let tarjetasContainer = document.getElementById("tarjetasC");
 
 async function bdMosaicos() {
   try {
-    const response = await fetch("https://baldosaslv.uy/mosaicosEnviar");
+    const response = await fetch("https://baldosaslv.uy/mosaicosDB");
     if (!response.ok) {
       throw new Error("Hubo un problema al obtener los datos");
     }
