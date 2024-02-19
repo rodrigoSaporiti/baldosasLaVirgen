@@ -15,7 +15,7 @@ function redirigirBlancas() {
 
 function redirigirCueros() {
   window.location.href = "lisas-info";
-  localStorage.setItem("Lisas", "Cueros");
+  localStorage.setItem("Lisas", "cueros");
 }
 
 function redirigirCremas() {

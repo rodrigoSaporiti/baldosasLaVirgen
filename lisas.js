@@ -15,7 +15,7 @@ function redirigirAmarillas() {
 
   function redirigirCueros() {
     window.location.href = 'lisas-galeria';
-    localStorage.setItem("LisasWeb", "Cuero")
+    localStorage.setItem("LisasWeb", "cueros")
   }
 
   function redirigirCremas() {
