@@ -10,7 +10,7 @@ function redirigirAzules() {
 
 function redirigirBlancas() {
   window.location.href = "lisas-info";
-  localStorage.setItem("Lisas", "blancos");
+  localStorage.setItem("Lisas", "blancas");
 }
 
 function redirigirCueros() {
@@ -30,12 +30,12 @@ function redirigirGrises() {
 
 function redirigirNegros() {
   window.location.href = "lisas-info";
-  localStorage.setItem("Lisas", "negros");
+  localStorage.setItem("Lisas", "negras");
 }
 
 function redirigirRojos() {
   window.location.href = "lisas-info";
-  localStorage.setItem("Lisas", "rojos");
+  localStorage.setItem("Lisas", "rojas");
 }
 
 function redirigirVerdes() {
