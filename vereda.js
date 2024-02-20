@@ -36,7 +36,7 @@ let inicio = document.querySelector(".inicio");
 
 
     let parrafo = document.createElement("p");
-    let texto = document.createTextNode("Desliza hacia abajo ↓↓");
+    let texto = document.createTextNode("Desliza hacia abajo ↴");
     parrafo.appendChild(texto);
 
     parrafo.classList.add("parrafoDeslizar");
